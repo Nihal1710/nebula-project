@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 1
+
+[engines]
+smtbmc yices
+
+[script]
+read -sv valid_miter.v
+prep -top valid_miter
+
+[files]
+valid_miter.v

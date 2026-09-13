@@ -1,0 +1,17 @@
+[gold]
+read -sv uart_rx_gold.v
+prep -top uart_rx
+memory_map
+
+[gate]
+read -sv uart_rx_gate.v
+prep -top uart_rx
+memory_map
+
+[strategy sat]
+use sat
+depth 5
+
+[strategy sby]
+use sby
+depth 10

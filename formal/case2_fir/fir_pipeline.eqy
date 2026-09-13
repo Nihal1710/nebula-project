@@ -1,0 +1,13 @@
+[gold]
+read -sv fir_gold_delayed.v
+prep -top fir_filter
+memory_map
+
+[gate]
+read -sv fir_gate.v
+prep -top fir_filter
+memory_map
+
+[strategy sat]
+use sat
+depth 12

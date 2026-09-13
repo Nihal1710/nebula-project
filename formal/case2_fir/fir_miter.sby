@@ -1,0 +1,23 @@
+[tasks]
+bmc
+prove
+
+[options]
+bmc: mode bmc
+bmc: depth 40
+prove: mode prove
+prove: depth 40
+
+[engines]
+smtbmc yices
+
+[script]
+read -sv miter_gold.v
+read -sv miter_gate.v
+read -sv fir_miter.v
+prep -top fir_miter
+
+[files]
+miter_gold.v
+miter_gate.v
+fir_miter.v

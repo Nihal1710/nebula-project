@@ -1,0 +1,13 @@
+[gold]
+read -sv gold_spi.v fifo4.v
+prep -top simple_spi
+memory_map
+
+[gate]
+read -sv gate_spi.v fifo4.v
+prep -top simple_spi
+memory_map
+
+[strategy sat]
+use sat
+depth 10
