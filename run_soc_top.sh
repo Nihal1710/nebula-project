@@ -5,6 +5,7 @@ iverilog -g2012 \
   -o soc_top_sim.vvp \
   tb/tb_soc_top.v \
   rtl/soc_top.v \
+  rtl/clk_divider.v \
   rtl/memory/mem_arbiter.v \
   rtl/memory/simple_ram.v \
   rtl/vendor/picorv32/picorv32.v \

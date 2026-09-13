@@ -53,7 +53,8 @@ def module_name_of(path):
 
 
 def normalize(entry, root, whole_file, cost_table=None,
-              scope_from_endpoint=False, context_files=None):
+              scope_from_endpoint=False, context_files=None,
+              scope_file=None):
     """Flatten one Track A entry into the fields the prompt needs."""
     insts = entry.get("instances", [])
     attributed = [i for i in insts if i.get("rtl_snippet")]
@@ -79,7 +80,12 @@ def normalize(entry, root, whole_file, cost_table=None,
         return v
 
     # Track A attributes at most a handful of instances. Take the first.
-    a = attributed[-1] if scope_from_endpoint else attributed[0]
+    if scope_file:
+        m = [x for x in attributed if x.get('src_file') == scope_file]
+        a = m[0] if m else dict(src_file=scope_file,
+                                src_start_line=1, src_end_line=10**6)
+    else:
+        a = attributed[-1] if scope_from_endpoint else attributed[0]
     src = a.get("src_file")
     full = Path(root) / src if src else None
 
@@ -326,6 +332,18 @@ def build_prompt(v):
             L.append(c["text"])
             L.append("```")
 
+    L.append("\n## If the fix is not in your scope\n")
+    L.append("If you return no_fix because the dominant delay lies in RTL "
+             "outside your edit scope, populate `out_of_scope_fix` with the "
+             "file and line range where the fix belongs, so the scope can be "
+             "widened and this violation retried. Base the location on the "
+             "gate sequence even if you have not been shown that file; set "
+             "confidence to 'low' when you have not. If no fix exists "
+             "anywhere on this path - the path is already minimal, or a fix "
+             "would change observable behaviour - set out_of_scope_fix to "
+             "null. That is a real refusal and correctly ends the search. "
+             "Do not name a file merely to avoid declining.\n")
+
     L.append("\n## RTL to modify\n")
     L.append(f"module : {v['module']}")
     L.append(f"file   : {v['src_file']}")
@@ -373,9 +391,36 @@ FIX_SCHEMA = {
         "rationale": {"type": "string",
                       "description": "Strategy choice, cut location, and what "
                                      "was delayed to stay balanced."},
+        "out_of_scope_fix": {
+            "type": ["object", "null"],
+            "description": "Only meaningful when fix_type is no_fix. If the "
+                           "dominant delay on this path lies in RTL you were "
+                           "NOT permitted to edit, name it here so the scope "
+                           "can be widened and the violation retried. Set to "
+                           "null if no fix exists anywhere on this path - "
+                           "that is a real refusal and stops the search.",
+            "properties": {
+                "src_file": {"type": "string",
+                             "description": "Repo-relative path to the file "
+                                            "containing the fixable logic."},
+                "start_line": {"type": "integer"},
+                "end_line": {"type": "integer"},
+                "confidence": {"type": "string",
+                               "enum": ["high", "medium", "low"],
+                               "description": "low if inferred only from the "
+                                              "gate sequence with no RTL "
+                                              "seen for that file."},
+                "reason": {"type": "string",
+                           "description": "One sentence: why the fix belongs "
+                                          "there rather than in your scope."},
+            },
+            "required": ["src_file", "start_line", "end_line",
+                         "confidence", "reason"],
+            "additionalProperties": False,
+        },
     },
     "required": ["fix_type", "target_module", "added_latency_cycles",
-                 "modified_rtl", "rationale"],
+                 "modified_rtl", "rationale", "out_of_scope_fix"],
     "additionalProperties": False,
 }
 
@@ -487,6 +532,16 @@ def validate(fix, v):
     ft, added = fix.get("fix_type"), fix.get("added_latency_cycles")
 
     # --- no_fix: a declared refusal. Validate the declaration, nothing else. ---
+    oos = fix.get("out_of_scope_fix")
+    if ft != "no_fix" and oos is not None:
+        errors.append("out_of_scope_fix must be null unless fix_type is no_fix")
+    if oos is not None:
+        if not (oos.get("src_file") or "").endswith((".v", ".sv")):
+            errors.append(f"out_of_scope_fix.src_file is not RTL: "
+                          f"{oos.get('src_file')!r}")
+        if oos.get("start_line", 0) > oos.get("end_line", 0):
+            errors.append("out_of_scope_fix line range is inverted")
+
     if ft == "no_fix":
         if added != 0:
             errors.append(f"no_fix but added_latency_cycles={added} (must be 0)")
@@ -577,6 +632,9 @@ def main():
                         "API (needs a key + Console credits)")
     p.add_argument("--outdir", default="fixes")
     p.add_argument("--dry-run", action="store_true", help="print prompt, no call")
+    p.add_argument("--scope-file", default=None, metavar="PATH",
+                   help="force the edit scope to this file "
+                        "(used by escalate.py)")
     p.add_argument("--scope-from-endpoint", action="store_true",
                    help="scope from the LAST attributed cell (capture side)")
     p.add_argument("--context-file", action="append", default=[],
@@ -600,7 +658,8 @@ def main():
     for idx, entry in select(entries, a):
         v = normalize(entry, a.root, a.whole_file, cost_table=costs,
                       scope_from_endpoint=a.scope_from_endpoint,
-                      context_files=a.context_file)
+                      context_files=a.context_file,
+                      scope_file=a.scope_file)
         tag = f"{v['module'] or 'mod'}_{v['clock'] or idx}"
         print(f"\n=== [{idx}] {tag}  slack={v['slack']}  scope={v['scope']} ===",
               file=sys.stderr)

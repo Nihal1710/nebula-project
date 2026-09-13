@@ -1,0 +1,256 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+    "start_line": 1,
+    "end_line": 214,
+    "scope": "file"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "retime",
+    "target_module": "uart_rx",
+    "added_latency_cycles": 0,
+    "modified_rtl": "\n// \n// Module: uart_rx \n// \n// Notes:\n// - UART reciever module.\n//\n\nmodule uart_rx(\ninput  wire       clk          , // Top level system clock input.\ninput  wire       resetn       , // Asynchronous active low reset.\ninput  wire       uart_rxd     , // UART Recieve pin.\ninput  wire       uart_rx_en   , // Recieve enable\noutput wire       uart_rx_break, // Did we get a BREAK message?\noutput wire       uart_rx_valid, // Valid data recieved and available.\noutput reg  [PAYLOAD_BITS-1:0] uart_rx_data   // The recieved data.\n);\n\n// --------------------------------------------------------------------------- \n// External parameters.\n// \n\n//\n// Input bit rate of the UART line.\nparameter   BIT_RATE        = 9600; // bits / sec\nlocalparam  BIT_P           = 1_000_000_000 * 1/BIT_RATE; // nanoseconds\n\n//\n// Clock frequency in hertz.\nparameter   CLK_HZ          =    50_000_000;\nlocalparam  CLK_P           = 1_000_000_000 * 1/CLK_HZ; // nanoseconds\n\n//\n// Number of data bits recieved per UART packet.\nparameter   PAYLOAD_BITS    = 8;\n\n//\n// Number of stop bits indicating the end of a packet.\nparameter   STOP_BITS       = 1;\n\n// -------------------------------------------------------------------------- \n// Internal parameters.\n// \n\n//\n// Number of clock cycles per uart bit.\nlocalparam       CYCLES_PER_BIT     = BIT_P / CLK_P;\n\n//\n// Size of the registers which store sample counts and bit durations.\nlocalparam       COUNT_REG_LEN      = 1+$clog2(CYCLES_PER_BIT);\n\n// -------------------------------------------------------------------------- \n// Internal registers.\n// \n\n//\n// Internally latched value of the uart_rxd line. Helps break long timing\n// paths from input pins into the logic.\nreg rxd_reg;\nreg rxd_reg_0;\n\n//\n// Storage for the recieved serial data.\nreg [PAYLOAD_BITS-1:0] recieved_data;\n\n//\n// Counter for the number of cycles over a packet bit.\nreg [COUNT_REG_LEN-1:0] cycle_counter;\n\n//\n// Counter for the number of recieved bits of the packet.\nreg [3:0] bit_counter;\n\n//\n// Sample of the UART input line whenever we are in the middle of a bit frame.\nreg bit_sample;\n\n//\n// Current and next states of the internal FSM.\nreg [2:0] fsm_state;\nreg [2:0] n_fsm_state;\n\nlocalparam FSM_IDLE = 0;\nlocalparam FSM_START= 1;\nlocalparam FSM_RECV = 2;\nlocalparam FSM_STOP = 3;\n\n// --------------------------------------------------------------------------- \n// Output assignment\n// \n\nwire next_bit     = cycle_counter == CYCLES_PER_BIT ||\n                        fsm_state       == FSM_STOP && \n                        cycle_counter   == CYCLES_PER_BIT/2;\nwire payload_done = bit_counter   == PAYLOAD_BITS  ;\n\n//\n// uart_rx_valid is retimed backwards across the cycle_counter / fsm_state\n// registers. The combinational value is\n//     valid(t) = (fsm_state==FSM_STOP) && next_bit\n// (A && (B || (A && C)) == A && (B || C)).  Evaluating that same function on\n// the NEXT values of fsm_state / cycle_counter and capturing it in a flop\n// gives a bit-identical waveform with unchanged latency, while removing the\n// counter compare tree from the output cone.\n//\n//   fsm_state' == FSM_STOP  <=>  (RECV && payload_done) || (STOP && !next_bit)\n//   both of those imply the counter is in an incrementing state, hence\n//   cycle_counter' == (next_bit ? 0 : cycle_counter+1).\n//   When next_bit holds, cycle_counter' == 0 which matches neither\n//   CYCLES_PER_BIT nor CYCLES_PER_BIT/2, so the !next_bit term below covers\n//   that case exactly; otherwise (cycle_counter+1 == K) <=> (cycle_counter ==\n//   K-1), no wrap is possible because K-1 fits in COUNT_REG_LEN bits.\n//\nwire n_fsm_is_stop   = (fsm_state == FSM_RECV && payload_done) ||\n                       (fsm_state == FSM_STOP && !next_bit   ) ;\nwire cyc_end_next    = cycle_counter == CYCLES_PER_BIT   - 1;\nwire cyc_half_next   = cycle_counter == CYCLES_PER_BIT/2 - 1;\nwire uart_rx_valid_d = n_fsm_is_stop && !next_bit &&\n                       (cyc_end_next || cyc_half_next);\n\nreg  uart_rx_valid_q;\n\nalways @(posedge clk) begin : p_uart_rx_valid\n    if(!resetn) begin\n        uart_rx_valid_q <= 1'b0;\n    end else begin\n        uart_rx_valid_q <= uart_rx_valid_d;\n    end\nend\n\nassign uart_rx_valid = uart_rx_valid_q;\nassign uart_rx_break = uart_rx_valid && ~|recieved_data;\n\nalways @(posedge clk) begin\n    if(!resetn) begin\n        uart_rx_data  <= {PAYLOAD_BITS{1'b0}};\n    end else if (fsm_state == FSM_STOP) begin\n        uart_rx_data  <= recieved_data;\n    end\nend\n\n// --------------------------------------------------------------------------- \n// FSM next state selection.\n// \n\n//\n// Handle picking the next state.\nalways @(*) begin : p_n_fsm_state\n    case(fsm_state)\n        FSM_IDLE : n_fsm_state = rxd_reg      ? FSM_IDLE : FSM_START;\n        FSM_START: n_fsm_state = next_bit     ? FSM_RECV : FSM_START;\n        FSM_RECV : n_fsm_state = payload_done ? FSM_STOP : FSM_RECV ;\n        FSM_STOP : n_fsm_state = next_bit     ? FSM_IDLE : FSM_STOP ;\n        default  : n_fsm_state = FSM_IDLE;\n    endcase\nend\n\n// --------------------------------------------------------------------------- \n// Internal register setting and re-setting.\n// \n\n//\n// Handle updates to the recieved data register.\ninteger i = 0;\nalways @(posedge clk) begin : p_recieved_data\n    if(!resetn) begin\n        recieved_data <= {PAYLOAD_BITS{1'b0}};\n    end else if(fsm_state == FSM_IDLE             ) begin\n        recieved_data <= {PAYLOAD_BITS{1'b0}};\n    end else if(fsm_state == FSM_RECV && next_bit ) begin\n        recieved_data[PAYLOAD_BITS-1] <= bit_sample;\n        for ( i = PAYLOAD_BITS-2; i >= 0; i = i - 1) begin\n            recieved_data[i] <= recieved_data[i+1];\n        end\n    end\nend\n\n//\n// Increments the bit counter when recieving.\nalways @(posedge clk) begin : p_bit_counter\n    if(!resetn) begin\n        bit_counter <= 4'b0;\n    end else if(fsm_state != FSM_RECV) begin\n        bit_counter <= {COUNT_REG_LEN{1'b0}};\n    end else if(fsm_state == FSM_RECV && next_bit) begin\n        bit_counter <= bit_counter + 1'b1;\n    end\nend\n\n//\n// Sample the recieved bit when in the middle of a bit frame.\nalways @(posedge clk) begin : p_bit_sample\n    if(!resetn) begin\n        bit_sample <= 1'b0;\n    end else if (cycle_counter == CYCLES_PER_BIT/2) begin\n        bit_sample <= rxd_reg;\n    end\nend\n\n\n//\n// Increments the cycle counter when recieving.\nalways @(posedge clk) begin : p_cycle_counter\n    if(!resetn) begin\n        cycle_counter <= {COUNT_REG_LEN{1'b0}};\n    end else if(next_bit) begin\n        cycle_counter <= {COUNT_REG_LEN{1'b0}};\n    end else if(fsm_state == FSM_START || \n                fsm_state == FSM_RECV  || \n                fsm_state == FSM_STOP   ) begin\n        cycle_counter <= cycle_counter + 1'b1;\n    end\nend\n\n\n//\n// Progresses the next FSM state.\nalways @(posedge clk) begin : p_fsm_state\n    if(!resetn) begin\n        fsm_state <= FSM_IDLE;\n    end else begin\n        fsm_state <= n_fsm_state;\n    end\nend\n\n\n//\n// Responsible for updating the internal value of the rxd_reg.\nalways @(posedge clk) begin : p_rxd_reg\n    if(!resetn) begin\n        rxd_reg     <= 1'b1;\n        rxd_reg_0   <= 1'b1;\n    end else if(uart_rx_en) begin\n        rxd_reg     <= rxd_reg_0;\n        rxd_reg_0   <= uart_rxd;\n    end\nend\n\n\nendmodule\n",
+    "rationale": "RETIME, 0 added cycles. The violating path leaves the cycle_counter flop (uart_rx.v:170), runs through the 14-bit CYCLES_PER_BIT / CYCLES_PER_BIT/2 equality tree (NOR4/NAND4/OAI22/NOR2/AOI211, 0.31 ns) and the FSM_STOP qualification that forms uart_rx_valid (the two AND3s + NAND3, 0.31 ns, the 0.130 ns AND3 being the high-fanout valid/write-enable net), then leaves the module into the gray-code XOR chain and full-compare of wptr_full.v (cells 9-12, 0.24 ns). 0.62 of the 0.94 ns is therefore in this file, and uart_rx_valid was a purely combinational output sitting mid-path with no register on it.\n\nCut/move: uart_rx_valid is retimed backwards across the existing cycle_counter and fsm_state registers. Instead of evaluating (fsm_state==FSM_STOP)&&next_bit on the current register values, the identical function is evaluated on their NEXT values and captured in uart_rx_valid_q, so the port waveform is bit-identical cycle for cycle and the input-to-output register count is unchanged (no added latency). cycle_counter and fsm_state are retained because they have other fan-out - standard retiming with register sharing. Derivation is exact, not reachability-based: fsm_state'==FSM_STOP <=> (RECV&&payload_done)||(STOP&&!next_bit), both of which imply the counter is in an incrementing state, so cycle_counter' = next_bit ? 0 : cycle_counter+1; when next_bit holds, cycle_counter'==0 matches neither constant (covered by the explicit !next_bit factor), otherwise cycle_counter+1==K <=> cycle_counter==K-1 with no wrap since K-1 fits in COUNT_REG_LEN bits. Synchronous active-low reset clears the new flop to 0, matching the golden value under reset (fsm_state'=IDLE). New arrival at the flop D is ~0.45 ns of logic (the same 5-level compare tree, now in parallel with next_bit, plus one AND); downstream the path now launches from a flop into only the wptr_full XOR/compare chain (~0.63 ns) - both comfortably inside the ~0.92 ns requirement.\n\nReconvergence: nothing needed re-balancing. uart_rx_break is the only internal consumer of uart_rx_valid and is left as valid && ~|recieved_data - since uart_rx_valid_q carries the same value in the same cycle and recieved_data is untouched, break is unchanged. uart_rx_data, the FSM, both counters and the sampler are byte-for-byte unmodified, so all three outputs keep their original latency.\n\nRejected PIPELINE: it would cost a cycle and force uart_rx_data and uart_rx_break to be delayed to match the golden-delayed wrapper, for only -0.02 ns of slack. Rejected RESTRUCTURE: the equality tree is already a balanced 5-level network and the only Boolean simplification available, A&&(B||(A&&C)) == A&&(B||C), is already applied in the source and folded by synthesis, so it buys no levels; rebuilding it from wider gates would be slower per the cell-cost table. Rejected NO_FIX: the dominant cone is in this file and a legal register boundary exists.",
+    "out_of_scope_fix": null
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "claims retime but registered-signal count changed by +1 (new: ['uart_rx_valid_q'])"
+    ],
+    "new_registered_signals": [
+      "uart_rx_valid_q"
+    ],
+    "register_delta": 1,
+    "tier": 1,
+    "refused": false
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-opus-4-1",
+    "num_turns": 2,
+    "cost_usd": 0.5646580000000001,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 4288,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.004353,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-opus-5": {
+        "inputTokens": 2,
+        "outputTokens": 19579,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 7082,
+        "webSearchRequests": 0,
+        "costUSD": 0.560305,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 13943,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "f4eb16e0-6e36-45fa-a109-28f04f3a7500"
+  }
+}
