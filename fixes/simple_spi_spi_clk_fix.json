@@ -1,0 +1,323 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 84,
+  "edit_scope": {
+    "src_file": "rtl/vendor/spi/rtl/verilog/simple_spi_top.v",
+    "start_line": 240,
+    "end_line": 258,
+    "scope": "snippet"
+  },
+  "violation": {
+    "startpoint": "_110212_",
+    "endpoint": "_110222_",
+    "path_group": "spi_clk",
+    "path_type": "max",
+    "slack_ns": -0.03,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_110212_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/spi/rtl/verilog/simple_spi_top.v",
+        "src_start_line": 240,
+        "src_end_line": 258,
+        "rtl_snippet": [
+          "  always @(posedge clk_i)",
+          "    if(spe & (|clkcnt & |state))",
+          "      clkcnt <= clkcnt - 11'h1;",
+          "    else",
+          "      case (espr) // synopsys full_case parallel_case",
+          "        4'b0000: clkcnt <= 12'h0;   // 2   -- original M68HC11 coding",
+          "        4'b0001: clkcnt <= 12'h1;   // 4   -- original M68HC11 coding",
+          "        4'b0010: clkcnt <= 12'h3;   // 16  -- original M68HC11 coding",
+          "        4'b0011: clkcnt <= 12'hf;   // 32  -- original M68HC11 coding",
+          "        4'b0100: clkcnt <= 12'h1f;  // 8",
+          "        4'b0101: clkcnt <= 12'h7;   // 64",
+          "        4'b0110: clkcnt <= 12'h3f;  // 128",
+          "        4'b0111: clkcnt <= 12'h7f;  // 256",
+          "        4'b1000: clkcnt <= 12'hff;  // 512",
+          "        4'b1001: clkcnt <= 12'h1ff; // 1024",
+          "        4'b1010: clkcnt <= 12'h3ff; // 2048",
+          "        4'b1011: clkcnt <= 12'h7ff; // 4096",
+          "        default : clkcnt <= 12'hfff;",
+          "      endcase"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_106251_",
+        "cell_type": "AOI21_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.13,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106252_",
+        "cell_type": "INV_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.14,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106253_",
+        "cell_type": "AOI21_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106254_",
+        "cell_type": "INV_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.19,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106255_",
+        "cell_type": "AOI21_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.24,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106256_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.02,
+        "arrival_ns": 0.25,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106257_",
+        "cell_type": "OAI21_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.29,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106258_",
+        "cell_type": "NAND2_X1",
+        "delay_ns": 0.02,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106259_",
+        "cell_type": "AND2_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.34,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106260_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.38,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106261_",
+        "cell_type": "OAI21_X1",
+        "delay_ns": 0.02,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106262_",
+        "cell_type": "AND2_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.44,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106263_",
+        "cell_type": "OAI21_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.48,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_106264_",
+        "cell_type": "NAND2_X1",
+        "delay_ns": 0.02,
+        "arrival_ns": 0.5,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109104_",
+        "cell_type": "AOI21_X1",
+        "delay_ns": 0.04,
+        "arrival_ns": 0.54,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109105_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.59,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109106_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.02,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_110222_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.61,
+        "src_file": "rtl/vendor/spi/rtl/verilog/simple_spi_top.v",
+        "src_start_line": 240,
+        "src_end_line": 258,
+        "rtl_snippet": [
+          "  always @(posedge clk_i)",
+          "    if(spe & (|clkcnt & |state))",
+          "      clkcnt <= clkcnt - 11'h1;",
+          "    else",
+          "      case (espr) // synopsys full_case parallel_case",
+          "        4'b0000: clkcnt <= 12'h0;   // 2   -- original M68HC11 coding",
+          "        4'b0001: clkcnt <= 12'h1;   // 4   -- original M68HC11 coding",
+          "        4'b0010: clkcnt <= 12'h3;   // 16  -- original M68HC11 coding",
+          "        4'b0011: clkcnt <= 12'hf;   // 32  -- original M68HC11 coding",
+          "        4'b0100: clkcnt <= 12'h1f;  // 8",
+          "        4'b0101: clkcnt <= 12'h7;   // 64",
+          "        4'b0110: clkcnt <= 12'h3f;  // 128",
+          "        4'b0111: clkcnt <= 12'h7f;  // 256",
+          "        4'b1000: clkcnt <= 12'hff;  // 512",
+          "        4'b1001: clkcnt <= 12'h1ff; // 1024",
+          "        4'b1010: clkcnt <= 12'h3ff; // 2048",
+          "        4'b1011: clkcnt <= 12'h7ff; // 4096",
+          "        default : clkcnt <= 12'hfff;",
+          "      endcase"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "restructure",
+    "target_module": "simple_spi",
+    "added_latency_cycles": 0,
+    "modified_rtl": "  always @(posedge clk_i)\n    if(spe & (|clkcnt & |state))\n      // Restructure: split the 12-bit decrement into two 6-bit ripple\n      // blocks with a carry-select on the upper half so the borrow no\n      // longer ripples through all 12 bits. Value is unchanged:\n      // still (clkcnt - 1) mod 4096, including the 0 -> 0xFFF wrap.\n      clkcnt <= { (~|clkcnt[5:0]) ? (clkcnt[11:6] - 6'h1) : clkcnt[11:6],\n                  clkcnt[5:0] - 6'h1 };\n    else\n      case (espr) // synopsys full_case parallel_case\n        4'b0000: clkcnt <= 12'h0;   // 2   -- original M68HC11 coding\n        4'b0001: clkcnt <= 12'h1;   // 4   -- original M68HC11 coding\n        4'b0010: clkcnt <= 12'h3;   // 16  -- original M68HC11 coding\n        4'b0011: clkcnt <= 12'hf;   // 32  -- original M68HC11 coding\n        4'b0100: clkcnt <= 12'h1f;  // 8\n        4'b0101: clkcnt <= 12'h7;   // 64\n        4'b0110: clkcnt <= 12'h3f;  // 128\n        4'b0111: clkcnt <= 12'h7f;  // 256\n        4'b1000: clkcnt <= 12'hff;  // 512\n        4'b1001: clkcnt <= 12'h1ff; // 1024\n        4'b1010: clkcnt <= 12'h3ff; // 2048\n        4'b1011: clkcnt <= 12'h7ff; // 4096\n        default : clkcnt <= 12'hfff;\n      endcase",
+    "rationale": "The path runs DFF(clkcnt bit) -> 17 unattributed combinational cells (alternating AOI21/INV borrow-generate groups, NAND2/AND2/NOR2/OAI21 propagation, a terminal XOR2) -> DFF(clkcnt bit). The only arithmetic in the shown scope is `clkcnt <= clkcnt - 11'h1`, so this is the borrow-ripple of the SPI clock-divider decrement feeding back into the same clkcnt register.\n\nStrategy = RESTRUCTURE. The 12-bit ripple decrement is rewritten as two 6-bit sub-blocks with carry-select on the upper half: the low block does `clkcnt[5:0]-1`, its borrow-out is `~|clkcnt[5:0]` (a 2-level 6-input NOR tree instead of a 6-deep borrow ripple), and the upper 6 bits are muxed between `clkcnt[11:6]` and `clkcnt[11:6]-1`. This cuts the worst chain from ~12 serial ripple levels to ~6 levels + NOR tree + one mux, using gates no wider than those already on the path, which covers the 0.03 ns shortfall. Provably identical: for clkcnt[5:0] != 0 the result is {U, L-1} with no upper borrow; for clkcnt[5:0] == 0 the low block wraps to 0x3F and the upper block decrements, giving {U-1 mod 64, 0x3F}, i.e. exactly (clkcnt-1) mod 4096 including the 0 -> 0xFFF case. The `espr` constant-load branch is left byte-for-byte unchanged.\n\nRETIME rejected: this is a register->comb->same-register feedback loop; there is no register inside the combinational chain (report shows both sequential cells are the path endpoints), so no existing register can be moved to shorten the loop.\n\nPIPELINE rejected: adding a register in the decrement feedback would make clkcnt update every second cycle, changing the SPI clock divide ratio, and the counter reconverges with the `|clkcnt & |state` enable and the downstream clock-generation FSM which are outside this scope and cannot be re-balanced here.\n\nNo reconvergent paths need delaying because latency is unchanged (added_latency_cycles = 0)."
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": 0,
+    "tier": 1,
+    "refused": false
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "(default)",
+    "num_turns": 2,
+    "cost_usd": 0.089648,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 2505,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.00258,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 7026,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 4201,
+        "webSearchRequests": 0,
+        "costUSD": 0.087068,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 4554,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "daa1bf15-7f43-49b4-9f3a-ea123ea8ae1b"
+  }
+}

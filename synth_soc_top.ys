@@ -1,0 +1,52 @@
+# ============================================================
+# Track A - soc_top synthesis (full 5-domain SoC)
+# Cell-count sanity check against the ~50K target.
+#
+# Run: yosys synth_soc_top.ys
+# EDIT: liberty path (2 occurrences below)
+# ============================================================
+
+read_verilog -sv rtl/soc_top.v
+read_verilog -sv rtl/vendor/picorv32/picorv32.v
+read_verilog -sv rtl/interconnect/apb_decoder.v
+read_verilog -sv rtl/interconnect/picorv32_apb_bridge.v
+read_verilog -sv rtl/memory/mem_arbiter.v
+read_verilog -sv rtl/memory/simple_ram.v
+read_verilog -sv rtl/peripherals/uart_wrapper.v
+read_verilog -sv rtl/vendor/uart/rtl/uart_tx.v
+read_verilog -sv rtl/vendor/uart/rtl/uart_rx.v
+read_verilog -sv rtl/peripherals/i2c_shim.v
+read_verilog -sv -I rtl/vendor/i2c/rtl/verilog rtl/vendor/i2c/rtl/verilog/i2c_master_top.v
+read_verilog -sv -I rtl/vendor/i2c/rtl/verilog rtl/vendor/i2c/rtl/verilog/i2c_master_byte_ctrl.v
+read_verilog -sv -I rtl/vendor/i2c/rtl/verilog rtl/vendor/i2c/rtl/verilog/i2c_master_bit_ctrl.v
+read_verilog -sv rtl/peripherals/spi_shim.v
+read_verilog -sv rtl/vendor/spi/rtl/verilog/simple_spi_top.v
+read_verilog -sv rtl/vendor/spi/rtl/verilog/fifo4.v
+read_verilog -sv rtl/peripherals/fir_wrapper.v
+read_verilog -sv rtl/peripherals/fir_filter.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/async_fifo.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/fifomem.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_r2w.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_w2r.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/rptr_empty.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/wptr_full.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_ptr.v
+read_verilog -sv rtl/clk_divider.v
+hierarchy -check -top soc_top
+
+proc
+flatten
+opt -fast
+memory
+opt -fast
+techmap
+opt -fast
+
+dfflibmap -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+opt_clean -purge
+
+stat -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+write_verilog netlist/soc_top_netlist.v

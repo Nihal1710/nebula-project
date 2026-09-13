@@ -1,0 +1,37 @@
+# ============================================================
+# Track A - FIR wrapper synthesis
+# fir_wrapper is a REAL multi-clock design (cpu_clk + fir_clk),
+# bridged via two async_fifo instances - unlike PicoRV32 alone.
+#
+# Run: yosys synth_fir.ys
+# EDIT: liberty path (2 occurrences below)
+# ============================================================
+
+read_verilog -sv rtl/peripherals/fir_wrapper.v
+read_verilog -sv rtl/peripherals/fir_filter.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/async_fifo.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/fifomem.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_r2w.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_w2r.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/rptr_empty.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/wptr_full.v
+read_verilog -sv rtl/vendor/async_fifo/rtl/sync_ptr.v
+
+hierarchy -check -top fir_wrapper
+
+proc
+flatten
+opt -fast
+memory
+opt -fast
+techmap
+opt -fast
+
+dfflibmap -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+opt_clean -purge
+
+stat -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+write_verilog netlist/fir_wrapper_netlist.v

@@ -90,8 +90,20 @@ localparam FSM_STOP = 3;
 // Output assignment
 // 
 
+wire next_bit     = cycle_counter == CYCLES_PER_BIT ||
+                        fsm_state       == FSM_STOP && 
+                        cycle_counter   == CYCLES_PER_BIT/2;
+wire payload_done = bit_counter   == PAYLOAD_BITS  ;
+
 assign uart_rx_break = uart_rx_valid && ~|recieved_data;
-assign uart_rx_valid = fsm_state == FSM_STOP && n_fsm_state == FSM_IDLE;
+// Restructured: originally "fsm_state==FSM_STOP && n_fsm_state==FSM_IDLE".
+// Per the FSM_STOP case arm below, n_fsm_state == FSM_IDLE  <=>  next_bit==1
+// whenever fsm_state==FSM_STOP (FSM_IDLE=0, FSM_STOP=3, mutually exclusive
+// encodings, so the ternary maps 1:1). next_bit is already computed for the
+// case statement itself, so this removes the redundant n_fsm_state mux +
+// 3-bit compare-to-FSM_IDLE from this output's fan-in without changing the
+// value for any input combination.
+assign uart_rx_valid = fsm_state == FSM_STOP && next_bit;
 
 always @(posedge clk) begin
     if(!resetn) begin
@@ -104,11 +116,6 @@ end
 // --------------------------------------------------------------------------- 
 // FSM next state selection.
 // 
-
-wire next_bit     = cycle_counter == CYCLES_PER_BIT ||
-                        fsm_state       == FSM_STOP && 
-                        cycle_counter   == CYCLES_PER_BIT/2;
-wire payload_done = bit_counter   == PAYLOAD_BITS  ;
 
 //
 // Handle picking the next state.

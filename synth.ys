@@ -1,0 +1,38 @@
+# ============================================================
+# Track A - Step 1: Synthesize PicoRV32 to a gate-level netlist
+# Run:  yosys synth.ys
+#
+# EDIT the liberty path below (all 3 occurrences) to match your
+# actual ORFS platform. Typical ORFS location for Nangate45:
+#   <orfs-root>/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+# If you're on ASAP7 or another platform, swap accordingly.
+# ============================================================
+
+read_verilog -sv rtl/vendor/picorv32/picorv32.v
+hierarchy -check -top picorv32
+
+# Generic RTL synthesis passes
+proc
+flatten
+opt -fast
+memory 
+opt -fast
+techmap
+opt -fast
+
+# Map flops + combinational logic to the target cell library
+dfflibmap -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+
+abc -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+
+
+opt_clean -purge
+
+# Sanity check: cell count / area (compare against the ~50K cell target)
+stat -liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+
+
+write_verilog  netlist/picorv32_netlist.v

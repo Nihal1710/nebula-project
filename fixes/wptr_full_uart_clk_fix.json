@@ -1,0 +1,251 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+    "start_line": 1,
+    "end_line": 65,
+    "scope": "file"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "no_fix",
+    "target_module": "wptr_full",
+    "added_latency_cycles": 0,
+    "modified_rtl": "",
+    "rationale": "Tracing the cell sequence against the two attributed endpoints shows the path is: cycle_counter bit (uart_rx.v:170, register _124902_) -> next_bit / n_fsm_state / uart_rx_valid logic in uart_rx.v (cells 1-6: NOR4, NAND4, OAI22, NOR2, AOI211, AND3 - almost certainly the wide COUNT_REG_LEN-bit (~14-bit, since CYCLES_PER_BIT=50MHz/9600baud\u22485208) equality comparator plus the FSM case/ternary mux) -> fifo2_winc gating in uart_wrapper.v (cell 7, AND3) -> wbinnext increment, wgraynext gray-encode and wfull_val compare in wptr_full.v (cells 8-12: NAND3 carry, XOR2 gray bit, XOR2 gray bit, XOR2 compare, NOR3 reduce) -> wfull/awfull register at wptr_full.v:52 (endpoint).\n\nOnly the last ~0.34 ns (cells 8-12) of the 0.94 ns summed chain, and only the last register, fall inside the RTL I'm allowed to edit (wptr_full.v). The larger contributors (cells 1-7, ~0.52 ns, the wide cycle-counter comparator and FSM next-state mux) live in uart_rx.v, which is explicitly read-only context here.\n\nWithin wptr_full.v itself:\n- RETIME is not available: wbin/wptr update in one always block and awfull/wfull update in a second always block on the same clock edge, but wfull_val is computed combinationally from the *current* wbin (via wbinnext/wgraynext) in the same cycle - there is no register sitting inside this combinational chain to slide. wbin and wfull are already exactly one register hop apart with nothing in between to move.\n- RESTRUCTURE is not safely available: the code already implements the minimal-depth \"simplified full-test\" comparator (the commented-out three-term AND-of-compares form is the naive version; the single-compare form actually used is already the optimized rewrite). The wbinnext adder is a plain +1 increment on a 5-bit counter (ADDRSIZE=4); its carry chain is already about as shallow as a ripple increment gets for this width, and per the cost table, replacing narrow carry gates (NAND3/AND3) with wider lookahead gates is not guaranteed to be faster and can be slower - I have no synthesis feedback to prove a net win, so I can't certify equivalence-preserving improvement.\n- PIPELINE is unsafe here: wfull is fed back into its own next-state computation (`winc & ~wfull` inside wbinnext) and also drives fifo2_winc/backpressure logic in uart_wrapper.v and the async_fifo write-side handshake, all outside this module's visibility. Delaying wfull/awfull by even one cycle would change when writes are blocked/accepted and would require re-balancing consumer logic I cannot see or verify from this scope.\n\nA correct fix would most plausibly retime or pipeline the wide cycle_counter/next_bit comparator inside uart_rx.v (rtl/vendor/uart/rtl/uart_rx.v, around the `next_bit`/`p_n_fsm_state` logic feeding lines ~108-123), which is outside the RTL I was given permission to modify. Given the negative slack is small (-0.02 ns) but the dominant delay is off-scope and the in-scope tail offers no provably safe reduction, I report NO_FIX for this module."
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": null,
+    "tier": null,
+    "refused": true
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-sonnet-5",
+    "num_turns": 2,
+    "cost_usd": 0.24000800000000003,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 7540,
+        "outputTokens": 18,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.00763,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 18849,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 10971,
+        "webSearchRequests": 0,
+        "costUSD": 0.23237800000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 17496,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "216bcc6a-fa05-4df6-b341-e97f04bd1331"
+  }
+}
