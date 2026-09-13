@@ -17,7 +17,7 @@
 // PRDATA/PREADY differ, per the bus discussion earlier in this project.
 //////////////////////////////////////////////////////////////////////////////////
 module soc_top #(
-    parameter RAM_WORDS  = 256,
+    parameter RAM_WORDS  = 384,
     parameter RAM_INIT   = ""
 ) (
     input clk,        // cpu_clk - drives PicoRV32, bridge, decoder
@@ -33,7 +33,8 @@ module soc_top #(
     output uart_txd, input uart_rxd,
     input  scl_pad_i, output scl_pad_o, output scl_padoen_o,
     input  sda_pad_i, output sda_pad_o, output sda_padoen_o,
-    output sck_o, output ss_o, output mosi_o, input miso_i
+    output sck_o, output ss_o, output mosi_o, input miso_i,
+        output [39:0] div_status
 );
 
     wire cpu_rst = ~resetn;   // this project's active-high convention, matches bridge/wrappers
@@ -154,5 +155,16 @@ module soc_top #(
         .PWDATA(PWDATA), .PRDATA(PRDATA_fir), .PREADY(PREADY_fir),
         .fir_clk(fir_clk), .fir_rst(fir_rst)
     );
+        // ---- generated clocks: one divider per master, multiple ratios ----
+    wire cpu_clk_div2, uart_clk_div4, i2c_clk_div8, spi_clk_div16, fir_clk_div32;
+    wire [7:0] st_cpu, st_uart, st_i2c, st_spi, st_fir;
+
+    div_domain #(.RATIO(2))  u_div_cpu  (.clk_in(clk),      .rst(cpu_rst),  .clk_div(cpu_clk_div2),   .status(st_cpu));
+    div_domain #(.RATIO(4))  u_div_uart (.clk_in(uart_clk), .rst(uart_rst), .clk_div(uart_clk_div4),  .status(st_uart));
+    div_domain #(.RATIO(8))  u_div_i2c  (.clk_in(i2c_clk),  .rst(i2c_rst),  .clk_div(i2c_clk_div8),   .status(st_i2c));
+    div_domain #(.RATIO(16)) u_div_spi  (.clk_in(spi_clk),  .rst(spi_rst),  .clk_div(spi_clk_div16),  .status(st_spi));
+    div_domain #(.RATIO(32)) u_div_fir  (.clk_in(fir_clk),  .rst(fir_rst),  .clk_div(fir_clk_div32),  .status(st_fir));
+
+    assign div_status = {st_fir, st_spi, st_i2c, st_uart, st_cpu};
 
 endmodule

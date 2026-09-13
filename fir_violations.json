@@ -1,0 +1,477 @@
+[
+  {
+    "startpoint": "cpu_rst",
+    "endpoint": "_6725_",
+    "path_group": "asynchronous",
+    "path_type": "max",
+    "slack_ns": 1.0141,
+    "violated": false,
+    "instances": [
+      {
+        "name": "_6527_",
+        "cell_type": "INV_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6725_",
+        "cell_type": "DFFS_X1",
+        "src_file": "rtl/vendor/async_fifo/rtl/rptr_empty.v",
+        "src_start_line": 50,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "    always @ (posedge rclk or negedge rrst_n) begin",
+          "",
+          "        if (!rrst_n) begin",
+          "            arempty <= 1'b0;",
+          "            rempty <= 1'b1;",
+          "        end",
+          "        else begin",
+          "            arempty <= arempty_val;",
+          "            rempty <= rempty_val;",
+          "        end",
+          "",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "startpoint": "_6701_",
+    "endpoint": "_6701_",
+    "path_group": "cpu_clk",
+    "path_type": "max",
+    "slack_ns": -0.0426,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_6701_",
+        "cell_type": "DFFR_X1",
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_3663_",
+        "cell_type": "NAND3_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3664_",
+        "cell_type": "NOR3_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3676_",
+        "cell_type": "NAND4_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3677_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5542_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6441_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6445_",
+        "cell_type": "NOR4_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      }
+    ]
+  },
+  {
+    "startpoint": "_6625_",
+    "endpoint": "_6750_",
+    "path_group": "fir_clk",
+    "path_type": "max",
+    "slack_ns": -0.4069,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_6625_",
+        "cell_type": "DFF_X1",
+        "src_file": "rtl/peripherals/fir_filter.v",
+        "src_start_line": 11,
+        "src_end_line": 25,
+        "rtl_snippet": [
+          "always @(posedge clk) begin",
+          "    if (rst) begin",
+          "        for (i=0; i<N; i=i+1) begin",
+          " ",
+          "            Q[i] <= 0;",
+          "        end",
+          "        c[0] <= 16'sd3;  c[1] <= 16'sd11;  c[2] <= 16'sd24;  c[3] <= 16'sd31;",
+          "        c[4] <= 16'sd31; c[5] <= 16'sd24;  c[6] <= 16'sd11;  c[7] <= 16'sd3;",
+          "    end else if (en) begin        // <-- only shift on a genuine new sample",
+          "        Q[0] <= sample_in;",
+          "        for (j=1; j<N; j=j+1)",
+          "            Q[j] <= Q[j-1];",
+          "    end",
+          "    // else: hold \u2014 no new sample this cycle, don't shift",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_3840_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3842_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3877_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3879_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3893_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3903_",
+        "cell_type": "OR4_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3904_",
+        "cell_type": "AOI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3905_",
+        "cell_type": "OAI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_3977_",
+        "cell_type": "AOI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_4059_",
+        "cell_type": "OAI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_4271_",
+        "cell_type": "AOI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_4685_",
+        "cell_type": "NOR3_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5050_",
+        "cell_type": "OAI33_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5068_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5069_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5070_",
+        "cell_type": "AOI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5207_",
+        "cell_type": "AOI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5238_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5249_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5250_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5267_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5268_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5285_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5286_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5297_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5298_",
+        "cell_type": "XOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5320_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5323_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_5333_",
+        "cell_type": "XNOR2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6339_",
+        "cell_type": "OAI21_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6431_",
+        "cell_type": "AND2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6432_",
+        "cell_type": "NOR3_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6440_",
+        "cell_type": "MUX2_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_6750_",
+        "cell_type": "DFF_X1",
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      }
+    ]
+  }
+]

@@ -1,6 +1,24 @@
+# --- simulation / build artefacts ---
 *.vvp
 *.vcd
 *.log
 *.key
 __pycache__/
 *.pyc
+
+# --- python env (284 MB; recreate: python3 -m venv .venv) ---
+.venv/
+
+# --- synthesis outputs; regenerate with `yosys synth_soc_top.ys` ---
+netlist/*.v
+
+# --- scratch ---
+*.bak
+*.messy
+fresh_clocks.txt
+_attic/
+
+# --- vendor simulator work dirs ---
+rtl/vendor/*/work/
+rtl/vendor/*/sim/*/run/ncwork/
+rtl/vendor/*/sim/*/run/*.vcd
