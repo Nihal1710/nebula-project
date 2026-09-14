@@ -1,0 +1,10 @@
+create_generated_clock -name cpu_div2 -source [get_ports clk] \
+    -divide_by 2 [get_pins _125495_/Q]
+create_generated_clock -name uart_div4 -source [get_ports uart_clk] \
+    -divide_by 4 [get_pins _125558_/Q]
+create_generated_clock -name i2c_div8 -source [get_ports i2c_clk] \
+    -divide_by 8 [get_pins _125627_/Q]
+create_generated_clock -name spi_div16 -source [get_ports spi_clk] \
+    -divide_by 16 [get_pins _125680_/Q]
+create_generated_clock -name fir_div32 -source [get_ports fir_clk] \
+    -divide_by 32 [get_pins _125739_/Q]
