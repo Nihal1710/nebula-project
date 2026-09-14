@@ -1,0 +1,21 @@
+SBY 23:38:50 [valid_miter] Removing directory '/home/praneeth/track_c/case3_uart/valid_miter'.
+SBY 23:38:50 [valid_miter] Copy '/home/praneeth/track_c/case3_uart/valid_miter.v' to '/home/praneeth/track_c/case3_uart/valid_miter/src/valid_miter.v'.
+SBY 23:38:50 [valid_miter] engine_0: smtbmc yices
+SBY 23:38:50 [valid_miter] base: starting process "cd valid_miter/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 23:38:50 [valid_miter] base: finished (returncode=0)
+SBY 23:38:50 [valid_miter] prep: starting process "cd valid_miter/model; yosys -ql design_prep.log design_prep.ys"
+SBY 23:38:50 [valid_miter] prep: finished (returncode=0)
+SBY 23:38:50 [valid_miter] smt2: starting process "cd valid_miter/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 23:38:50 [valid_miter] smt2: finished (returncode=0)
+SBY 23:38:50 [valid_miter] engine_0: starting process "cd valid_miter; yosys-smtbmc -s yices --presat --unroll --noprogress -t 1  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 23:38:50 [valid_miter] engine_0: ##   0:00:00  Solver: yices
+SBY 23:38:50 [valid_miter] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 23:38:50 [valid_miter] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 23:38:50 [valid_miter] engine_0: ##   0:00:00  Status: passed
+SBY 23:38:50 [valid_miter] engine_0: finished (returncode=0)
+SBY 23:38:50 [valid_miter] engine_0: Status returned by engine: pass
+SBY 23:38:50 [valid_miter] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:38:50 [valid_miter] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:38:50 [valid_miter] summary: engine_0 (smtbmc yices) returned pass
+SBY 23:38:50 [valid_miter] summary: engine_0 did not produce any traces
+SBY 23:38:50 [valid_miter] DONE (PASS, rc=0)

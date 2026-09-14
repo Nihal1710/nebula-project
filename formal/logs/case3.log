@@ -1,0 +1,60 @@
+EQY 23:38:18 [uart_case3] read_gold: starting process "yosys -ql uart_case3/gold.log uart_case3/gold.ys"
+EQY 23:38:18 [uart_case3] read_gold: finished (returncode=0)
+EQY 23:38:18 [uart_case3] read_gate: starting process "yosys -ql uart_case3/gate.log uart_case3/gate.ys"
+EQY 23:38:18 [uart_case3] read_gate: finished (returncode=0)
+EQY 23:38:18 [uart_case3] combine: starting process "yosys -ql uart_case3/combine.log uart_case3/combine.ys"
+EQY 23:38:18 [uart_case3] combine: finished (returncode=0)
+EQY 23:38:18 [uart_case3] partition: starting process "cd uart_case3; yosys -ql partition.log partition.ys"
+EQY 23:38:19 [uart_case3] partition: finished (returncode=0)
+EQY 23:38:19 [uart_case3] Warning: Partition uart_rx.uart_rx_valid contains 1 unused gold inputs.
+EQY 23:38:19 [uart_case3] Warning: Partition uart_rx.uart_rx_valid contains 1 unused gate inputs.
+EQY 23:38:19 [uart_case3] run: starting process "make -C uart_case3 -f strategies.mk"
+EQY 23:38:19 [uart_case3] run: make: Entering directory '/home/praneeth/track_c/case3_uart/uart_case3'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.bit_counter'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.bit_counter' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.bit_sample'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.bit_sample' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.cycle_counter'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.cycle_counter' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.fsm_state'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.fsm_state' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.n_fsm_state'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.n_fsm_state' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.next_bit'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.next_bit' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.payload_done'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.payload_done' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.recieved_data'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.recieved_data' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.rxd_reg'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.rxd_reg' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.rxd_reg_0'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.rxd_reg_0' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.uart_rx_break'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.uart_rx_break' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.uart_rx_data'..
+EQY 23:38:19 [uart_case3] run: Proved equivalence of partition 'uart_rx.uart_rx_data' using strategy 'sat'
+EQY 23:38:19 [uart_case3] run: Running strategy 'sat' on 'uart_rx.uart_rx_valid'..
+EQY 23:38:19 [uart_case3] run: Could not prove equivalence of partition 'uart_rx.uart_rx_valid' using strategy 'sat': partitions not equivalent
+EQY 23:38:19 [uart_case3] run: make -f strategies.mk summary
+EQY 23:38:19 [uart_case3] run: make[1]: Entering directory '/home/praneeth/track_c/case3_uart/uart_case3'
+EQY 23:38:19 [uart_case3] run: make[1]: Leaving directory '/home/praneeth/track_c/case3_uart/uart_case3'
+EQY 23:38:19 [uart_case3] run: make: Leaving directory '/home/praneeth/track_c/case3_uart/uart_case3'
+EQY 23:38:19 [uart_case3] run: finished (returncode=0)
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.uart_rx_data
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.uart_rx_break
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.rxd_reg_0
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.rxd_reg
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.recieved_data
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.payload_done
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.next_bit
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.n_fsm_state
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.fsm_state
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.cycle_counter
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.bit_sample
+EQY 23:38:19 [uart_case3] Successfully proved equivalence of partition uart_rx.bit_counter
+EQY 23:38:19 [uart_case3] Warning: Failed to prove equivalence for 1/13 partitions:
+EQY 23:38:19 [uart_case3] Failed to prove equivalence of partition uart_rx.uart_rx_valid
+EQY 23:38:19 [uart_case3] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+EQY 23:38:19 [uart_case3] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+EQY 23:38:19 [uart_case3] DONE (FAIL, rc=2)

@@ -28,3 +28,8 @@ formal/case2_fir/miter_gold.v
 formal/case2_fir/miter_gate.v
 formal/**/*_miter/
 formal/**/*.eqy.d/
+
+# --- formal evidence: keep these despite the *.log / *.vcd rules above ---
+!formal/logs/
+!formal/logs/*.log
+!formal/logs/*.vcd

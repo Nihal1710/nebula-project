@@ -1,0 +1,214 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+10 (git sha1 370a53acf-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Executing script file `run.ys' --
+
+1. Executing Verilog-2005 frontend: ../../../partitions/uart_rx.uart_rx_valid.sv
+Parsing SystemVerilog input from `../../../partitions/uart_rx.uart_rx_valid.sv' to AST representation.
+Generating RTLIL representation for module `\miter'.
+Generating RTLIL representation for module `\miter_cmp_prop'.
+Generating RTLIL representation for module `\miter_def_prop'.
+Generating RTLIL representation for module `\gold.uart_rx.uart_rx_valid'.
+Generating RTLIL representation for module `\gate.uart_rx.uart_rx_valid'.
+Successfully finished Verilog frontend.
+
+2. Executing RTLIL frontend.
+Input filename: ../../../partitions/uart_rx.uart_rx_valid.il
+Replacing existing blackbox module \gold.uart_rx.uart_rx_valid.
+Replacing existing blackbox module \gate.uart_rx.uart_rx_valid.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \miter
+Used module:     \miter_cmp_prop
+Used module:     \gate.uart_rx.uart_rx_valid
+Used module:     \gold.uart_rx.uart_rx_valid
+Parameter 1 (\WIDTH) = 1
+Parameter 2 (\TYPE) = 48'011000010111001101110011011001010111001001110100
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\miter_cmp_prop'.
+Parameter 1 (\WIDTH) = 1
+Parameter 2 (\TYPE) = 48'011000010111001101110011011001010111001001110100
+Generating RTLIL representation for module `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop'.
+
+3.3. Analyzing design hierarchy..
+Top module:  \miter
+Used module:     $paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop
+Used module:     \gate.uart_rx.uart_rx_valid
+Used module:     \gold.uart_rx.uart_rx_valid
+
+3.4. Analyzing design hierarchy..
+Top module:  \miter
+Used module:     $paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop
+Used module:     \gate.uart_rx.uart_rx_valid
+Used module:     \gold.uart_rx.uart_rx_valid
+Removing unused module `\miter_def_prop'.
+Removing unused module `\miter_cmp_prop'.
+Removed 2 unused modules.
+Module $paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop directly or indirectly contains formal properties -> setting "keep" attribute.
+Module miter directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell miter.__po_uart_rx_valid__assert ($paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop).
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 3 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:66$482'.
+Creating decoders for process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:60$477'.
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.\i' from process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:60$477'.
+No latch inferred for signal `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.\okay' from process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:60$477'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:66$482'.
+Removing empty process `$paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.$proc$../../../partitions/uart_rx.uart_rx_valid.sv:60$477'.
+Cleaned up 0 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gold.uart_rx.uart_rx_valid.
+Optimizing module $paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.
+<suppressed ~1 debug messages>
+Optimizing module gate.uart_rx.uart_rx_valid.
+Optimizing module miter.
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing FORMALFF pass.
+
+7. Executing SETUNDEF pass (replace undef values with defined constants).
+
+8. Executing FLATTEN pass (flatten design).
+Deleting now unused module gold.uart_rx.uart_rx_valid.
+Deleting now unused module $paramod$7c68cd0f50b67350b96c971f2e7bf39c83376225\miter_cmp_prop.
+Deleting now unused module gate.uart_rx.uart_rx_valid.
+<suppressed ~3 debug messages>
+
+9. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+<suppressed ~1 debug messages>
+
+11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \miter..
+Removed 1 unused cells and 7 unused wires.
+<suppressed ~2 debug messages>
+
+12. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Import def constraint for this timestep: \__pi_next_bit
+Import def constraint for this timestep: \__pi_n_fsm_state
+Import def constraint for this timestep: \__pi_fsm_state
+Imported 12 cells to SAT database.
+Import proof for assert: \__po_uart_rx_valid__assert.okay when 1'1.
+
+** Trying induction with length 1 **
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Import def constraint for this timestep: \__pi_next_bit
+Import def constraint for this timestep: \__pi_n_fsm_state
+Import def constraint for this timestep: \__pi_fsm_state
+Imported 12 cells to SAT database.
+No constraints for initial state found.
+
+Import proof for assert: \__po_uart_rx_valid__assert.okay when 1'1.
+Import show expression: \__po_uart_rx_valid__assert.i
+Import show expression: \__po_uart_rx_valid__assert.okay
+Import show expression: \__po_uart_rx_valid__assert.in_gate
+Import show expression: \__po_uart_rx_valid__assert.in_gold
+Import show expression: \gate.n_fsm_state
+Import show expression: \gate.next_bit
+Import show expression: \gate.fsm_state
+Import show expression: \gate.uart_rx_valid
+Import show expression: \gate.__pi_fsm_state
+Import show expression: \gate.__pi_n_fsm_state
+Import show expression: \gate.__pi_next_bit
+Import show expression: \gate.__po_uart_rx_valid
+Import show expression: \gold.n_fsm_state
+Import show expression: \gold.next_bit
+Import show expression: \gold.fsm_state
+Import show expression: \gold.uart_rx_valid
+Import show expression: \gold.__pi_fsm_state
+Import show expression: \gold.__pi_n_fsm_state
+Import show expression: \gold.__pi_next_bit
+Import show expression: \gold.__po_uart_rx_valid
+Import show expression: \__po_uart_rx_valid__gate
+Import show expression: \__po_uart_rx_valid__gold
+Import show expression: \__pi_next_bit
+Import show expression: \__pi_n_fsm_state
+Import show expression: \__pi_fsm_state
+
+[base case 1] Solving problem with 179 variables and 460 clauses..
+SAT temporal induction proof finished - model found for base case: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                      Dec       Hex                                 Bin
+  ---- ---------------------------------------- ----------- --------- -----------------------------------
+     1 \__pi_fsm_state                                    3         3                                 011
+     1 \__pi_n_fsm_state                                  1         1                                  01
+     1 \__pi_next_bit                                     1         1                                   1
+     1 \__po_uart_rx_valid__assert.i                      1         1    00000000000000000000000000000001
+     1 \__po_uart_rx_valid__assert.in_gate                1         1                                   1
+     1 \__po_uart_rx_valid__assert.in_gold                0         0                                   0
+     1 \__po_uart_rx_valid__assert.okay                   0         0                                   0
+     1 \__po_uart_rx_valid__gate                          1         1                                   1
+     1 \__po_uart_rx_valid__gold                          0         0                                   0
+     1 \gate.__pi_fsm_state                               3         3                                 011
+     1 \gate.__pi_n_fsm_state                             1         1                                  01
+     1 \gate.__pi_next_bit                                1         1                                   1
+     1 \gate.__po_uart_rx_valid                           1         1                                   1
+     1 \gate.fsm_state                                    3         3                                 011
+     1 \gate.n_fsm_state                                  1         1                                  01
+     1 \gate.next_bit                                     1         1                                   1
+     1 \gate.uart_rx_valid                                1         1                                   1
+     1 \gold.__pi_fsm_state                               3         3                                 011
+     1 \gold.__pi_n_fsm_state                             1         1                                  01
+     1 \gold.__pi_next_bit                                1         1                                   1
+     1 \gold.__po_uart_rx_valid                           0         0                                   0
+     1 \gold.fsm_state                                    3         3                                 011
+     1 \gold.n_fsm_state                                  1         1                                  01
+     1 \gold.next_bit                                     1         1                                   1
+     1 \gold.uart_rx_valid                                0         0                                   0
+Dumping SAT model to VCD file trace.vcd
+
+End of script. Logfile hash: af6ab5697b, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 17.20 MB peak
+Yosys 0.69+10 (git sha1 370a53acf-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 36% 1x sat (0 sec), 29% 2x read_verilog (0 sec), ...

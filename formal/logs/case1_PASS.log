@@ -1,0 +1,248 @@
+EQY 23:32:54 [spi_restructure] read_gold: starting process "yosys -ql spi_restructure/gold.log spi_restructure/gold.ys"
+EQY 23:32:54 [spi_restructure] read_gold: Warning: Encountered `full_case' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using the Verilog `full_case' attribute or the SystemVerilog `unique' or `unique0' keywords is recommended!
+EQY 23:32:54 [spi_restructure] read_gold: Warning: Encountered `parallel_case' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using the Verilog `parallel_case' attribute or the SystemVerilog `unique' or `priority' keywords is recommended!
+EQY 23:32:54 [spi_restructure] read_gate: starting process "yosys -ql spi_restructure/gate.log spi_restructure/gate.ys"
+EQY 23:32:54 [spi_restructure] read_gate: Warning: Encountered `full_case' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using the Verilog `full_case' attribute or the SystemVerilog `unique' or `unique0' keywords is recommended!
+EQY 23:32:54 [spi_restructure] read_gate: Warning: Encountered `parallel_case' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using the Verilog `parallel_case' attribute or the SystemVerilog `unique' or `priority' keywords is recommended!
+EQY 23:32:54 [spi_restructure] read_gold: finished (returncode=0)
+EQY 23:32:54 [spi_restructure] read_gate: finished (returncode=0)
+EQY 23:32:54 [spi_restructure] combine: starting process "yosys -ql spi_restructure/combine.log spi_restructure/combine.ys"
+EQY 23:32:54 [spi_restructure] combine: finished (returncode=0)
+EQY 23:32:54 [spi_restructure] partition: starting process "cd spi_restructure; yosys -ql partition.log partition.ys"
+EQY 23:32:54 [spi_restructure] partition: finished (returncode=0)
+EQY 23:32:54 [spi_restructure] run: starting process "make -C spi_restructure -f strategies.mk"
+EQY 23:32:54 [spi_restructure] run: make: Entering directory '/home/praneeth/track_c/case1_spi/spi_restructure'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.ack_o'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.ack_o' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.bcnt'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.bcnt' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.clkcnt'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.clkcnt' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.cpha'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.cpha' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.cpol'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.cpol' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.dat_o'..
+EQY 23:32:54 [spi_restructure] run: Proved equivalence of partition 'simple_spi.dat_o' using strategy 'sat'
+EQY 23:32:54 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.dwom'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.dwom' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.espr.0'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.espr.0' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.espr.1'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.espr.1' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.espr.2'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.espr.2' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.espr.3'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.espr.3' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.icnt.0'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.icnt.0' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.icnt.1'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.icnt.1' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.inta_o'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.inta_o' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.mosi_o'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.mosi_o' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.mstr'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.mstr' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.notgold_spi.v18626_Y'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.notgold_spi.v18626_Y' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.notgold_spi.v21641_Y'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.notgold_spi.v21641_Y' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.dout'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.dout' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.empty'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.empty' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.full'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.full' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.gb'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.gb' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.mem.0'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.mem.0' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.mem.1'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.mem.1' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.mem.2'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.mem.2' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.mem.3'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.mem.3' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.rp'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.rp' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.rp_p1'..
+EQY 23:32:55 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.rp_p1' using strategy 'sat'
+EQY 23:32:55 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.wp'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.wp' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfifo.wp_p1'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfifo.wp_p1' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfre'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfre' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.rfwe'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.rfwe' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.sck_o'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.sck_o' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spcr'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spcr' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spe'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spe' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.sper'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.sper' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spie'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spie' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spif'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spif' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spr.0'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spr.0' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spr.1'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spr.1' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spre.0'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spre.0' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spre.1'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spre.1' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.0'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.0' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.1'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.1' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.2'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.2' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.3'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.3' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.4'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.4' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.5'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.5' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.6'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.6' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.spsr.7'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.spsr.7' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.ss_o'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.ss_o' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.ss_r'..
+EQY 23:32:56 [spi_restructure] run: Proved equivalence of partition 'simple_spi.ss_r' using strategy 'sat'
+EQY 23:32:56 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.state'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.state' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.tcnt'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.tcnt' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.tirq'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.tirq' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.treg'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.treg' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wb_acc'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wb_acc' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wb_wr'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wb_wr' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wcol'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wcol' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.dout'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.dout' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.empty'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.empty' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.full'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.full' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.gb'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.gb' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.mem.0'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.mem.0' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.mem.1'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.mem.1' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.mem.2'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.mem.2' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.mem.3'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.mem.3' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.rp'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.rp' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.rp_p1'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.rp_p1' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.wp'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.wp' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfifo.wp_p1'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfifo.wp_p1' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfov'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfov' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfre'..
+EQY 23:32:57 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfre' using strategy 'sat'
+EQY 23:32:57 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wfwe'..
+EQY 23:32:58 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wfwe' using strategy 'sat'
+EQY 23:32:58 [spi_restructure] run: Running strategy 'sat' on 'simple_spi.wr_spsr'..
+EQY 23:32:58 [spi_restructure] run: Proved equivalence of partition 'simple_spi.wr_spsr' using strategy 'sat'
+EQY 23:32:58 [spi_restructure] run: make -f strategies.mk summary
+EQY 23:32:58 [spi_restructure] run: make[1]: Entering directory '/home/praneeth/track_c/case1_spi/spi_restructure'
+EQY 23:32:58 [spi_restructure] run: make[1]: Leaving directory '/home/praneeth/track_c/case1_spi/spi_restructure'
+EQY 23:32:58 [spi_restructure] run: make: Leaving directory '/home/praneeth/track_c/case1_spi/spi_restructure'
+EQY 23:32:58 [spi_restructure] run: finished (returncode=0)
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.wp_p1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.wp
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.rp_p1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.rp
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.mem.3
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.mem.2
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.mem.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.mem.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.gb
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.full
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.empty
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfifo.dout
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.wp_p1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.wp
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.rp_p1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.rp
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.mem.3
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.mem.2
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.mem.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.mem.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.gb
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.full
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.empty
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfifo.dout
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wr_spsr
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfov
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfwe
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wfre
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wcol
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wb_wr
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.wb_acc
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.treg
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.7
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.6
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.5
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.4
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.3
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.2
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spsr.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spre.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spre.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spr.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spr.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spif
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spie
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.sper
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spe
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.spcr
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.sck_o
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfwe
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.notgold_spi.v21641_Y
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.rfre
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.notgold_spi.v18626_Y
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.ss_o
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.ss_r
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.state
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.tcnt
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.tirq
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.mstr
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.mosi_o
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.inta_o
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.icnt.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.icnt.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.espr.3
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.espr.2
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.espr.1
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.espr.0
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.dwom
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.dat_o
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.cpol
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.cpha
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.clkcnt
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.bcnt
+EQY 23:32:58 [spi_restructure] Successfully proved equivalence of partition simple_spi.ack_o
+EQY 23:32:58 [spi_restructure] Successfully proved designs equivalent
+EQY 23:32:58 [spi_restructure] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:03 (3)
+EQY 23:32:58 [spi_restructure] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:03 (3)
+EQY 23:32:58 [spi_restructure] DONE (PASS, rc=0)
