@@ -1,0 +1,11 @@
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential                  NaN        NaN 1.2350e-03        NaN   0.0%
+Combinational               NaN inf        1.2950e-03        NaN   0.0%
+Clock                       NaN 1.6608e-05 2.7198e-07        NaN   0.0%
+Macro                0.0000e+00 0.0000e+00 0.0000e+00 0.0000e+00   0.0%
+Pad                  0.0000e+00 0.0000e+00 0.0000e+00 0.0000e+00   0.0%
+----------------------------------------------------------------
+Total                       NaN        NaN 2.5310e-03        NaN   0.0%
+                           0.0%       0.0%       0.0%
