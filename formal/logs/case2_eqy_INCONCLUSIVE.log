@@ -1,0 +1,81 @@
+EQY  1:18:16 [fir_pipeline] read_gold: starting process "yosys -ql fir_pipeline/gold.log fir_pipeline/gold.ys"
+EQY  1:18:16 [fir_pipeline] read_gold: Warning: Replacing memory \c with list of registers. See fir_gold_delayed.v:16
+EQY  1:18:16 [fir_pipeline] read_gold: Warning: Replacing memory \Q with list of registers. See fir_gold_delayed.v:14
+EQY  1:18:16 [fir_pipeline] read_gate: starting process "yosys -ql fir_pipeline/gate.log fir_pipeline/gate.ys"
+EQY  1:18:16 [fir_pipeline] read_gate: Warning: Replacing memory \c with list of registers. See fir_gate.v:19
+EQY  1:18:16 [fir_pipeline] read_gate: Warning: Replacing memory \Q with list of registers. See fir_gate.v:17
+EQY  1:18:16 [fir_pipeline] read_gold: finished (returncode=0)
+EQY  1:18:16 [fir_pipeline] read_gate: finished (returncode=0)
+EQY  1:18:16 [fir_pipeline] combine: starting process "yosys -ql fir_pipeline/combine.log fir_pipeline/combine.ys"
+EQY  1:18:16 [fir_pipeline] combine: finished (returncode=0)
+EQY  1:18:16 [fir_pipeline] partition: starting process "cd fir_pipeline; yosys -ql partition.log partition.ys"
+EQY  1:18:16 [fir_pipeline] partition: finished (returncode=0)
+EQY  1:18:16 [fir_pipeline] Warning: Partition fir_filter.sample_out contains 16 unused gold inputs.
+EQY  1:18:16 [fir_pipeline] Warning: Partition fir_filter.sample_out contains 1 unused gate inputs.
+EQY  1:18:16 [fir_pipeline] Warning: Partition fir_filter.imm contains 1 unused gold inputs.
+EQY  1:18:16 [fir_pipeline] Warning: Partition fir_filter.imm contains 16 unused gate inputs.
+EQY  1:18:16 [fir_pipeline] run: starting process "make -C fir_pipeline -f strategies.mk"
+EQY  1:18:16 [fir_pipeline] run: make: Entering directory '/home/praneeth/track_c/case2_fir/fir_pipeline'
+EQY  1:18:16 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.0'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.0' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.1'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.1' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.2'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.2' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.3'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.3' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.4'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.4' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.5'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.5' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.6'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.6' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.Q.7'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.Q.7' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.0'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.0' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.1'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.1' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.2'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.2' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.3'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.3' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.4'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.4' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.5'..
+EQY  1:18:17 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.5' using strategy 'sat'
+EQY  1:18:17 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.6'..
+EQY  1:18:18 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.6' using strategy 'sat'
+EQY  1:18:18 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.c.7'..
+EQY  1:18:18 [fir_pipeline] run: Proved equivalence of partition 'fir_filter.c.7' using strategy 'sat'
+EQY  1:18:18 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.imm'..
+EQY  1:18:18 [fir_pipeline] run: Could not prove equivalence of partition 'fir_filter.imm' using strategy 'sat': partitions not equivalent
+EQY  1:18:18 [fir_pipeline] run: Running strategy 'sat' on 'fir_filter.sample_out'..
+EQY  1:18:23 [fir_pipeline] run: Could not prove equivalence of partition 'fir_filter.sample_out' using strategy 'sat': equivalence unknown
+EQY  1:18:23 [fir_pipeline] run: make -f strategies.mk summary
+EQY  1:18:23 [fir_pipeline] run: make[1]: Entering directory '/home/praneeth/track_c/case2_fir/fir_pipeline'
+EQY  1:18:24 [fir_pipeline] run: make[1]: Leaving directory '/home/praneeth/track_c/case2_fir/fir_pipeline'
+EQY  1:18:24 [fir_pipeline] run: make: Leaving directory '/home/praneeth/track_c/case2_fir/fir_pipeline'
+EQY  1:18:24 [fir_pipeline] run: finished (returncode=0)
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.7
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.6
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.5
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.4
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.3
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.2
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.1
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.c.0
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.7
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.6
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.5
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.4
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.3
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.2
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.1
+EQY  1:18:24 [fir_pipeline] Successfully proved equivalence of partition fir_filter.Q.0
+EQY  1:18:24 [fir_pipeline] Warning: Failed to prove equivalence for 2/18 partitions:
+EQY  1:18:24 [fir_pipeline] Failed to prove equivalence of partition fir_filter.sample_out
+EQY  1:18:24 [fir_pipeline] Failed to prove equivalence of partition fir_filter.imm
+EQY  1:18:24 [fir_pipeline] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:07 (7)
+EQY  1:18:24 [fir_pipeline] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:07 (7)
+EQY  1:18:24 [fir_pipeline] DONE (FAIL, rc=2)
