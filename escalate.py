@@ -102,7 +102,7 @@ def main():
     ap.add_argument("violations")
     ap.add_argument("--index", type=int, required=True)
     ap.add_argument("--max-rounds", type=int, default=4)
-    ap.add_argument("--outdir", default=None, metavar="DIR",
+    ap.add_argument("--outdir", default="fixes_escalate", metavar="DIR",
                     help="write fix records here instead of fixes/. Use this "
                          "to avoid overwriting recorded results - tags collide "
                          "on <module>_<clock>.")
