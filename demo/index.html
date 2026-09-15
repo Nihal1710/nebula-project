@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timing closure loop</title>
+<style>
+:root{
+  --paper:#FBFAF7; --ink:#16191D; --soft:#5C6068; --rule:#D9D5CC;
+  --violated:#A81E2B; --met:#1D5E4A; --struct:#1F3A5F; --warn:#8A5A00;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink); font-family:var(--sans);
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 28px 96px}
+
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:26px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;font-weight:600;letter-spacing:-.01em}
+header p{margin:0;color:var(--soft);max-width:64ch}
+
+.cols{display:grid;grid-template-columns:288px 1fr;gap:34px;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+
+/* ---- switchboard ---- */
+.board{border:1px solid var(--rule);background:#fff;padding:18px 16px}
+.board h2{font-size:13px;margin:0 0 4px;font-weight:600}
+.board .hint{font-size:12.5px;color:var(--soft);margin:0 0 16px}
+.gate{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--rule)}
+.gate:first-of-type{border-top:none}
+.sw{
+  flex:0 0 auto;width:38px;height:21px;border-radius:11px;border:1px solid var(--struct);
+  background:var(--struct);position:relative;cursor:pointer;padding:0;margin-top:2px;
+  transition:background .14s ease,border-color .14s ease;
+}
+.sw::after{
+  content:"";position:absolute;top:2px;left:19px;width:15px;height:15px;border-radius:50%;
+  background:#fff;transition:left .14s ease;
+}
+.sw[aria-pressed="false"]{background:#fff;border-color:var(--violated)}
+.sw[aria-pressed="false"]::after{left:2px;background:var(--violated)}
+.sw:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.gate label{font-size:13.5px;cursor:pointer}
+.gate .id{font-family:var(--mono);font-size:12px;color:var(--struct);display:block}
+.gate.off label{color:var(--violated)}
+.gate.off .id{color:var(--violated)}
+.reset{margin-top:16px;width:100%;padding:8px;border:1px solid var(--ink);background:#fff;
+  font-family:var(--sans);font-size:13px;cursor:pointer}
+.reset:hover{background:var(--ink);color:#fff}
+
+/* ---- case tabs ---- */
+.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);margin-bottom:0}
+.tab{
+  border:none;background:none;padding:9px 14px;cursor:pointer;font-family:var(--sans);
+  font-size:13.5px;color:var(--soft);border-bottom:2px solid transparent;margin-bottom:-1px;
+}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);font-weight:600}
+.tab .n{font-family:var(--mono);font-size:12px;margin-right:6px;color:var(--soft)}
+
+/* ---- stages ---- */
+.stage{border-bottom:1px solid var(--rule);padding:14px 0}
+.stage h3{font-size:13.5px;margin:0 0 6px;font-weight:600;display:flex;gap:9px;align-items:baseline}
+.stage h3 .num{font-family:var(--mono);font-size:12px;color:var(--soft);flex:0 0 22px}
+.stage .body{padding-left:31px}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:2px 14px;font-size:13.5px}
+.kv dt{color:var(--soft)}
+.kv dd{margin:0;font-family:var(--mono);font-size:12.5px;word-break:break-word}
+.prose{font-size:13.5px;color:var(--soft);margin:7px 0 0;max-width:72ch}
+.neg{color:var(--violated);font-weight:600}
+.pos{color:var(--met);font-weight:600}
+.gateline{font-size:13px;margin:8px 0 0;padding-left:11px;border-left:2px solid var(--struct);max-width:72ch}
+.gateline.broken{border-left-color:var(--violated);color:var(--violated)}
+
+/* slack figure */
+.slackfig{display:flex;gap:26px;align-items:baseline;margin:4px 0 2px;flex-wrap:wrap}
+.slackfig .big{font-family:var(--mono);font-size:30px;letter-spacing:-.02em}
+.slackfig .arrow{color:var(--soft);font-size:18px}
+.slackfig .cap{font-size:12.5px;color:var(--soft)}
+
+/* ---- verdict ---- */
+.verdict{position:sticky;bottom:0;margin-top:22px;border:2px solid var(--met);background:#fff;padding:14px 18px}
+.verdict.reject{border-color:var(--violated)}
+.verdict.retry,.verdict.declined{border-color:var(--warn)}
+.verdict .top{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.verdict .word{font-family:var(--mono);font-size:19px;font-weight:600;letter-spacing:.02em}
+.verdict.accept .word{color:var(--met)}
+.verdict.reject .word{color:var(--violated)}
+.verdict.retry .word,.verdict.declined .word{color:var(--warn)}
+.verdict .reason{font-size:13.5px;color:var(--soft)}
+.flag{margin-top:10px;padding:9px 12px;background:#FCEEEF;border-left:3px solid var(--violated);
+  font-size:13.5px;max-width:78ch}
+.flag b{color:var(--violated)}
+.rtl{border:1px solid var(--rule);background:#fff;margin-top:8px;overflow-x:auto}
+.rtl pre{margin:0;font-family:var(--mono);font-size:12px;line-height:1.5}
+.rtl .l{display:block;padding:0 10px;white-space:pre}
+.rtl .add{background:#EAF4EF;color:var(--met)}
+.rtl .del{background:#FCEEEF;color:var(--violated)}
+.rtl .hunk{background:#F1EFE9;color:var(--soft)}
+.rtlmeta{font-size:12.5px;color:var(--soft);margin:0 0 2px}
+.rtlmeta .a{color:var(--met)} .rtlmeta .d{color:var(--violated)}
+details.why{margin-top:9px}
+details.why summary{font-size:13px;color:var(--struct);cursor:pointer}
+details.why p{font-size:13px;color:var(--soft);max-width:74ch;white-space:pre-wrap;margin:7px 0 0}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9;border:1px solid var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#loop">Skip to the loop</a>
+<div class="wrap">
+
+<header>
+  <h1>Where a timing fix gets accepted, and what stops it</h1>
+  <p>Four proposals an LLM made against real timing violations in a 63,080-cell SoC.
+     Every number below is a recorded measurement. Switch a gate off to see the
+     verdict the loop would have reached without it.</p>
+</header>
+
+<div class="cols">
+
+  <aside class="board" aria-label="Gates">
+    <h2>Gates</h2>
+    <p class="hint">All three were added because a measurement contradicted the
+       original design. Turn one off and a case below goes wrong.</p>
+    <div id="gates"></div>
+    <button class="reset" id="reset">Turn every gate back on</button>
+  </aside>
+
+  <main id="loop">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div id="stages"></div>
+    <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
+  </main>
+
+</div>
+</div>
+
+<script>
+const GATE_ORDER = ["A","B","C","designwide"];
+const GATE_NAME  = {A:"Gate A", B:"Gate B", C:"Gate C", designwide:"Criterion"};
+let CASES = [], GATES = {}, state = {A:true,B:true,C:true,designwide:true}, active = 0, verdicts = {};
+
+const sign = n => (n>0?"+":"") + n.toFixed(2);
+const cls  = n => n<0 ? "neg" : "pos";
+const esc  = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+async function boot(){
+  const r = await fetch("/api/cases").then(r=>r.json());
+  CASES = r.cases; GATES = r.gates;
+  drawGates();
+  drawTabs();
+  await refresh();
+}
+
+function drawGates(){
+  document.getElementById("gates").innerHTML = GATE_ORDER.map(k=>`
+    <div class="gate" id="g-${k}">
+      <button class="sw" role="switch" aria-pressed="true" data-k="${k}"
+              aria-labelledby="l-${k}"></button>
+      <label id="l-${k}" for="">
+        <span class="id">${GATE_NAME[k]}</span>${esc(GATES[k])}
+      </label>
+    </div>`).join("");
+  document.querySelectorAll(".sw").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const k=b.dataset.k; state[k]=!state[k];
+      b.setAttribute("aria-pressed", String(state[k]));
+      document.getElementById("g-"+k).classList.toggle("off", !state[k]);
+      refresh();
+    });
+  });
+  document.getElementById("reset").addEventListener("click",()=>{
+    GATE_ORDER.forEach(k=>{
+      state[k]=true;
+      const b=document.querySelector(`.sw[data-k="${k}"]`);
+      b.setAttribute("aria-pressed","true");
+      document.getElementById("g-"+k).classList.remove("off");
+    });
+    refresh();
+  });
+}
+
+function drawTabs(){
+  document.getElementById("tabs").innerHTML = CASES.map((c,i)=>`
+    <button class="tab" role="tab" aria-selected="${i===active}" data-i="${i}">
+      <span class="n">${i+1}</span>${esc(c.title)}
+    </button>`).join("");
+  document.querySelectorAll(".tab").forEach(t=>{
+    t.addEventListener("click",()=>{
+      active=+t.dataset.i;
+      document.querySelectorAll(".tab").forEach(x=>
+        x.setAttribute("aria-selected", String(+x.dataset.i===active)));
+      render();
+    });
+  });
+}
+
+async function refresh(){
+  verdicts = await fetch("/api/decide",{
+    method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({gates:state})
+  }).then(r=>r.json());
+  render();
+  markTabs();
+}
+
+function markTabs(){
+  document.querySelectorAll(".tab").forEach(t=>{
+    const c = CASES[+t.dataset.i], v = verdicts[c.tag];
+    t.querySelector(".n").style.color = v && v.wrong ? "var(--violated)" : "";
+    t.querySelector(".n").textContent = v && v.wrong ? "!" : (+t.dataset.i + 1);
+  });
+}
+
+function stage(n, title, body){
+  return `<section class="stage"><h3><span class="num">${n}</span>${title}</h3>
+          <div class="body">${body}</div></section>`;
+}
+
+function render(){
+  const c = CASES[active], v = verdicts[c.tag] || {};
+
+  const s1 = stage(1,"Timing violation", `
+    <div class="slackfig">
+      <span class="big ${cls(c.slack)}">${sign(c.slack)} ns</span>
+      <span class="cap">${esc(c.clock)} · ${c.stages} logic stages</span>
+    </div>
+    <dl class="kv">
+      <dt>From</dt><dd>${esc(c.source_file)} · index ${c.violation_index}</dd>
+      <dt>Files on path</dt><dd>${c.attributed.map(esc).join("<br>") || "none"}</dd>
+      <dt>Unattributed</dt><dd>${c.unattributed} of ${c.stages} cells</dd>
+    </dl>
+    <p class="prose">Only flip-flops carry a source attribute. <code>abc</code>
+       rebuilds combinational logic from scratch, so the gates that actually
+       cause the delay cannot be traced back to RTL.</p>`);
+
+  const s2 = stage(2,"Proposal", `
+    <dl class="kv">
+      <dt>Scope given</dt><dd>${esc(c.scope)}</dd>
+      <dt>Model</dt><dd>${esc(c.model)}</dd>
+      <dt>Returned</dt><dd>${esc(c.fix_type)} · +${c.added_latency} cycle${c.added_latency===1?"":"s"}</dd>
+      <dt>Tier</dt><dd>${c.tier}</dd>
+    </dl>
+    <p class="prose">The model sees one violating path and the RTL around it.
+       It never sees the rest of the SoC.</p>
+    ${c.rationale?`<details class="why"><summary>Why the model says it made this change</summary>
+      <p>${esc(c.rationale)}</p></details>`:""}`);
+
+  const r = c.rtl;
+  const sR = stage(3,"RTL change", `
+    <p class="rtlmeta">${r.mode==="diff"
+      ? `against <code>${esc(r.before)}</code> &middot; <span class="a">+${r.adds}</span> <span class="d">&minus;${r.dels}</span>`
+      : `the model returned only the part it changed, not a whole module` }</p>
+    <div class="rtl"><pre>${r.lines.map(l=>{
+      const k = l.t==="+"?"add":l.t==="-"?"del":l.t==="@"?"hunk":"";
+      return `<span class="l ${k}">${esc((l.t===" "?" ":l.t)+l.s)}</span>`;
+    }).join("")}</pre></div>
+    ${r.truncated?`<p class="prose">${r.truncated} further diff lines not shown.</p>`:""}`);
+
+  const s3 = stage(4,"Structural validator", `
+    <dl class="kv">
+      <dt>Passed</dt><dd class="${c.validator_ok?"pos":"neg"}">${c.validator_ok}</dd>
+      ${c.new_regs.length?`<dt>New registers</dt><dd>${c.new_regs.map(esc).join(", ")}</dd>`:""}
+      ${c.validator_errors.length?`<dt>Errors</dt><dd class="neg">${c.validator_errors.map(esc).join("<br>")}</dd>`:""}
+    </dl>
+    <p class="prose">Runs before any solver. A malformed patch costs nothing to reject here.</p>`);
+
+  const gcOn = state.C, tier2 = c.tier===2;
+  const s4 = stage(5,"Tier routing", `
+    <dl class="kv"><dt>Route</dt><dd>${
+      tier2 ? (gcOn ? "tier 2 &rarr; miter, EQY skipped"
+                    : "tier 2 &rarr; EQY (gate off)")
+            : "tier 1 &rarr; EQY"}</dd></dl>
+    ${tier2 ? `<p class="gateline ${gcOn?"":"broken"}">${gcOn
+        ? "A pipeline fix adds registers with no counterpart in the original, so EQY has nothing to match them against. Skipping it saves a run that cannot conclude."
+        : "EQY ran anyway: 16 of 18 partitions proved, <code>imm</code> returned a spurious counterexample, <code>sample_out</code> returned UNKNOWN. Neither is evidence of a defect."}</p>` : ""}`);
+
+  const s5 = stage(6,"Formal equivalence", `
+    <dl class="kv">
+      <dt>EQY</dt><dd>${esc(c.eqy)}</dd>
+      ${c.fallback?`<dt>Fallback</dt><dd>${esc(c.fallback)}</dd>`:""}
+    </dl>
+    <p class="prose">${esc(c.eqy_note)}</p>
+    ${c.eqy==="PASS_AFTER_REACHABILITY_CHECK" ? `<p class="gateline ${state.B?"":"broken"}">${state.B
+        ? "The counterexample was checked for reachability, found impossible, and discarded. A miter proved the fix instead."
+        : "The counterexample was sent back to the model as if it were real. It requires <code>fsm_state=FSM_STOP</code> with <code>n_fsm_state=FSM_START</code>, which the case statement forbids."}</p>` : ""}`);
+
+  const dw = c.design_before!==null && c.design_after!==null;
+  const s6 = stage(7,"Re-STA", state.A ? `
+    <div class="slackfig">
+      <span class="big ${cls(c.before)}">${sign(c.before)}</span>
+      <span class="arrow">&rarr;</span>
+      <span class="big ${cls(c.after)}">${sign(c.after)} ns</span>
+      <span class="cap">${esc(c.clock)} · ${c.before_n} &rarr; ${c.after_n} violated</span>
+    </div>
+    ${dw?`<dl class="kv"><dt>Design-wide</dt>
+      <dd class="${c.design_after<c.design_before?"pos":"neg"}">${c.design_before} &rarr; ${c.design_after} violated paths</dd>
+      <dt>Measured from</dt><dd>${c.measured_from.map(esc).join("<br>")}</dd></dl>`:""}
+    ${c.side_effect?`<p class="prose"><b>Side effect:</b> ${esc(c.side_effect)}</p>`:""}
+    ${!state.designwide?`<p class="gateline broken">Judged on ${esc(c.clock)} alone. Whatever happened to the other four domains is not being looked at.</p>`:""}
+  ` : `<p class="gateline broken">Skipped. The fix was accepted on the strength of
+       its equivalence proof, without re-measuring what it did to the design.</p>`);
+
+  const notes = (v.notes||[]).filter(n=>!/^Gate [ABC]:/.test(n));
+  document.getElementById("stages").innerHTML = s1+s2+sR+s3+s4+s5+s6;
+
+  const kind = {ACCEPTED:"accept",REJECTED:"reject",RETRY:"retry",DECLINED:"declined"}[v.verdict]||"accept";
+  document.getElementById("verdict").className = "verdict "+kind;
+  document.getElementById("verdict").innerHTML = `
+    <div class="top"><span class="word">${esc(v.verdict||"")}</span>
+      <span class="reason">${esc(v.reason||"")}</span></div>
+    ${v.wrong?`<div class="flag"><b>This is the wrong call.</b> With every gate on the
+       loop returns ${esc(v.correct)}. ${notes.map(esc).join(" ")}</div>`:""}`;
+}
+
+boot();
+</script>
+</body>
+</html>
