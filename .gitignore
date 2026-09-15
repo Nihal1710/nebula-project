@@ -10,7 +10,7 @@ __pycache__/
 .venv/
 
 # --- synthesis outputs; regenerate with `yosys synth_soc_top.ys` ---
-netlist/*.v
+netlist/*
 !netlist/.gitkeep
 
 # --- scratch ---
