@@ -90,7 +90,7 @@ def run_propose(vjson, index, scope_file, context_files, dry_run,
         log(f"    propose_fix.py exited {r.returncode}")
         log("    " + (r.stderr or "").strip()[:400])
         return None
-    for line in (r.stdout or "").splitlines():
+    for line in ((r.stdout or "") + "\n" + (r.stderr or "")).splitlines():
         if "->" in line and line.strip().endswith(".json"):
             return Path(line.split("->")[-1].strip())
     log("    could not locate the output file in propose_fix.py stdout")
