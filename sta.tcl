@@ -1,3 +1,4 @@
+set ORFS [expr {[info exists env(ORFS)] ? $env(ORFS) : "/OpenROAD-flow-scripts"}]
 # ============================================================
 # Track A - Step 1: run OpenSTA report_checks
 # Run:  sta sta.tcl        (binary name may be `opensta` on your setup)
@@ -6,7 +7,7 @@
 # Make sure reports/ and netlist/ directories exist before running.
 # ============================================================
 
-read_liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_liberty $ORFS/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
 
 
 read_verilog netlist/picorv32_netlist.v

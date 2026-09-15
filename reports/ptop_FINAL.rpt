@@ -1,0 +1,12 @@
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential           7.5941e-02 2.4284e-03 1.1888e-03 7.9558e-02  78.4%
+Combinational        1.3525e-02 7.1190e-03 1.2809e-03 2.1925e-02  21.6%
+Clock                3.5677e-06 1.5059e-06 2.1926e-07 5.2928e-06   0.0%
+Macro                0.0000e+00 0.0000e+00 0.0000e+00 0.0000e+00   0.0%
+Pad                  0.0000e+00 0.0000e+00 0.0000e+00 0.0000e+00   0.0%
+----------------------------------------------------------------
+Total                8.9464e-02 9.5489e-03 2.4699e-03 1.0148e-01 100.0%
+                          88.2%       9.4%       2.4%
+Error: sta_power_top.tcl, 6 invalid command name "highest_power_instances"

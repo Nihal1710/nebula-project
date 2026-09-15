@@ -1,0 +1,3903 @@
+Startpoint: _123456_/Q (clock source 'cpu_div2')
+Endpoint: _123456_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   1.55    1.55   clock cpu_div2 (fall edge)
+   0.00    1.55 v _123456_/Q (DFF_X1)
+   0.01    1.56 ^ _062110_/ZN (INV_X1)
+   0.01    1.58 v _108265_/ZN (AOI211_X1)
+   0.00    1.58 v _123456_/D (DFF_X1)
+           1.58   data arrival time
+
+   1.55    1.55   clock cpu_clk (rise edge)
+   0.00    1.55   clock network delay (ideal)
+   0.00    1.55   clock reconvergence pessimism
+           1.55 ^ _123456_/CK (DFF_X1)
+   0.00    1.55   library hold time
+           1.55   data required time
+---------------------------------------------------------
+           1.55   data required time
+          -1.58   data arrival time
+---------------------------------------------------------
+           0.02   slack (MET)
+
+
+Startpoint: _123483_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[0] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123483_/CK (DFF_X1)
+   0.08    0.08 v _123483_/Q (DFF_X1)
+   0.00    0.08 v div_status[0] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123484_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[1] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123484_/CK (DFF_X1)
+   0.08    0.08 v _123484_/Q (DFF_X1)
+   0.00    0.08 v div_status[1] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123485_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[2] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123485_/CK (DFF_X1)
+   0.08    0.08 v _123485_/Q (DFF_X1)
+   0.00    0.08 v div_status[2] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123486_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[3] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123486_/CK (DFF_X1)
+   0.08    0.08 v _123486_/Q (DFF_X1)
+   0.00    0.08 v div_status[3] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123487_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[4] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123487_/CK (DFF_X1)
+   0.08    0.08 v _123487_/Q (DFF_X1)
+   0.00    0.08 v div_status[4] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123488_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[5] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123488_/CK (DFF_X1)
+   0.08    0.08 v _123488_/Q (DFF_X1)
+   0.00    0.08 v div_status[5] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123489_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[6] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123489_/CK (DFF_X1)
+   0.08    0.08 v _123489_/Q (DFF_X1)
+   0.00    0.08 v div_status[6] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123490_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: div_status[7] (output port clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123490_/CK (DFF_X1)
+   0.08    0.08 v _123490_/Q (DFF_X1)
+   0.00    0.08 v div_status[7] (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108857_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108852_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108857_/CK (DFFR_X1)
+   0.08    0.08 v _108857_/Q (DFFR_X1)
+   0.00    0.08 v _108852_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108852_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108858_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108853_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108858_/CK (DFFR_X1)
+   0.08    0.08 v _108858_/Q (DFFR_X1)
+   0.00    0.08 v _108853_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108853_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108859_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108854_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108859_/CK (DFFR_X1)
+   0.08    0.08 v _108859_/Q (DFFR_X1)
+   0.00    0.08 v _108854_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108854_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108860_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108855_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108860_/CK (DFFR_X1)
+   0.08    0.08 v _108860_/Q (DFFR_X1)
+   0.00    0.08 v _108855_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108855_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108861_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108856_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108861_/CK (DFFR_X1)
+   0.08    0.08 v _108861_/Q (DFFR_X1)
+   0.00    0.08 v _108856_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108856_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108914_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108911_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108914_/CK (DFFR_X1)
+   0.08    0.08 v _108914_/Q (DFFR_X1)
+   0.00    0.08 v _108911_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108911_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108915_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108912_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108915_/CK (DFFR_X1)
+   0.08    0.08 v _108915_/Q (DFFR_X1)
+   0.00    0.08 v _108912_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108912_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108916_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108913_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108916_/CK (DFFR_X1)
+   0.08    0.08 v _108916_/Q (DFFR_X1)
+   0.00    0.08 v _108913_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108913_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108932_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108929_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108932_/CK (DFFR_X1)
+   0.08    0.08 v _108932_/Q (DFFR_X1)
+   0.00    0.08 v _108929_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108929_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108933_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108930_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108933_/CK (DFFR_X1)
+   0.08    0.08 v _108933_/Q (DFFR_X1)
+   0.00    0.08 v _108930_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108930_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108934_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Endpoint: _108931_ (rising edge-triggered flip-flop clocked by cpu_clk)
+Path Group: cpu_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108934_/CK (DFFR_X1)
+   0.08    0.08 v _108934_/Q (DFFR_X1)
+   0.00    0.08 v _108931_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock cpu_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108931_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123475_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123475_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123475_/CK (DFF_X1)
+   0.06    0.06 ^ _123475_/QN (DFF_X1)
+   0.03    0.09 ^ _077062_/ZN (AND2_X1)
+   0.00    0.09 ^ _123475_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123475_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123476_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123476_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123476_/CK (DFF_X1)
+   0.08    0.08 v _123476_/Q (DFF_X1)
+   0.02    0.11 ^ _077061_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123476_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123476_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123482_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123482_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123482_/CK (DFF_X1)
+   0.08    0.08 v _123482_/Q (DFF_X1)
+   0.03    0.11 ^ _108261_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123482_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123482_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123480_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123480_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123480_/CK (DFF_X1)
+   0.08    0.08 v _123480_/Q (DFF_X1)
+   0.03    0.11 ^ _077052_/ZN (OAI21_X1)
+   0.01    0.12 v _077053_/ZN (NOR2_X1)
+   0.00    0.12 v _123480_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123480_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123478_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123478_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123478_/CK (DFF_X1)
+   0.08    0.08 v _123478_/Q (DFF_X1)
+   0.03    0.11 ^ _077056_/ZN (OAI21_X1)
+   0.01    0.12 v _077057_/ZN (NOR2_X1)
+   0.00    0.12 v _123478_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123478_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123479_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123479_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123479_/CK (DFF_X1)
+   0.08    0.08 v _123479_/Q (DFF_X1)
+   0.03    0.11 ^ _077054_/ZN (OAI21_X1)
+   0.01    0.12 v _077055_/ZN (NOR2_X1)
+   0.00    0.12 v _123479_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123479_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123475_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123477_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123475_/CK (DFF_X1)
+   0.08    0.08 v _123475_/Q (DFF_X1)
+   0.03    0.11 ^ _077058_/ZN (AOI21_X1)
+   0.01    0.12 v _077059_/ZN (NOR3_X1)
+   0.00    0.12 v _123477_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123477_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123481_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Endpoint: _123481_ (rising edge-triggered flip-flop clocked by cpu_div2)
+Path Group: cpu_div2
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123481_/CK (DFF_X1)
+   0.08    0.08 v _123481_/Q (DFF_X1)
+   0.03    0.11 ^ _077050_/ZN (OAI21_X1)
+   0.01    0.12 v _077051_/ZN (NOR2_X1)
+   0.00    0.12 v _123481_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock cpu_div2 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123481_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123700_/Q (clock source 'fir_div32')
+Endpoint: _123700_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+  23.36   23.36   clock fir_div32 (fall edge)
+   0.00   23.36 v _123700_/Q (DFF_X1)
+   0.02   23.38 ^ _108674_/ZN (NOR2_X1)
+   0.01   23.40 v _108675_/ZN (AOI211_X1)
+   0.00   23.40 v _123700_/D (DFF_X1)
+          23.40   data arrival time
+
+  23.36   23.36   clock fir_clk (rise edge)
+   0.00   23.36   clock network delay (ideal)
+   0.00   23.36   clock reconvergence pessimism
+          23.36 ^ _123700_/CK (DFF_X1)
+   0.00   23.36   library hold time
+          23.36   data required time
+---------------------------------------------------------
+          23.36   data required time
+         -23.40   data arrival time
+---------------------------------------------------------
+           0.04   slack (MET)
+
+
+Startpoint: _109049_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109045_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109049_/CK (DFFR_X1)
+   0.08    0.08 v _109049_/Q (DFFR_X1)
+   0.00    0.08 v _109045_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109045_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109050_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109046_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109050_/CK (DFFR_X1)
+   0.08    0.08 v _109050_/Q (DFFR_X1)
+   0.00    0.08 v _109046_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109046_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109051_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109047_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109051_/CK (DFFR_X1)
+   0.08    0.08 v _109051_/Q (DFFR_X1)
+   0.00    0.08 v _109047_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109047_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109052_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109048_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109052_/CK (DFFR_X1)
+   0.08    0.08 v _109052_/Q (DFFR_X1)
+   0.00    0.08 v _109048_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109048_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109089_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109085_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109089_/CK (DFFR_X1)
+   0.08    0.08 v _109089_/Q (DFFR_X1)
+   0.00    0.08 v _109085_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109085_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109090_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109086_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109090_/CK (DFFR_X1)
+   0.08    0.08 v _109090_/Q (DFFR_X1)
+   0.00    0.08 v _109086_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109086_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109091_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109087_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109091_/CK (DFFR_X1)
+   0.08    0.08 v _109091_/Q (DFFR_X1)
+   0.00    0.08 v _109087_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109087_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109092_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109088_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109092_/CK (DFFR_X1)
+   0.08    0.08 v _109092_/Q (DFFR_X1)
+   0.00    0.08 v _109088_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109088_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123695_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _123695_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123695_/CK (DFF_X1)
+   0.06    0.06 ^ _123695_/QN (DFF_X1)
+   0.03    0.09 ^ _076600_/ZN (AND2_X1)
+   0.00    0.09 ^ _123695_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123695_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _109047_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109061_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109047_/CK (DFFR_X1)
+   0.07    0.07 ^ _109047_/QN (DFFR_X1)
+   0.01    0.08 v _108197_/Z (XOR2_X1)
+   0.02    0.10 ^ _108202_/ZN (NOR2_X1)
+   0.00    0.10 ^ _109061_/D (DFFR_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109061_/CK (DFFR_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _109101_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109106_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109101_/CK (DFFS_X1)
+   0.08    0.08 ^ _109101_/QN (DFFS_X1)
+   0.02    0.10 v _068160_/Z (XOR2_X1)
+   0.00    0.10 v _109106_/D (DFFR_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109106_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123708_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123716_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123708_/CK (DFF_X1)
+   0.08    0.08 v _123708_/Q (DFF_X1)
+   0.02    0.10 ^ _063253_/ZN (INV_X1)
+   0.01    0.10 v _108422_/ZN (NOR2_X1)
+   0.00    0.10 v _123716_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123716_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _124251_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _124235_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124251_/CK (DFF_X1)
+   0.08    0.08 v _124251_/Q (DFF_X1)
+   0.01    0.09 ^ _062365_/ZN (INV_X1)
+   0.01    0.10 v _071611_/ZN (AOI21_X1)
+   0.00    0.10 v _124235_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124235_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123703_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123711_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123703_/CK (DFF_X1)
+   0.08    0.08 v _123703_/Q (DFF_X1)
+   0.02    0.10 ^ _063252_/ZN (INV_X1)
+   0.01    0.11 v _076568_/ZN (NOR2_X1)
+   0.00    0.11 v _123711_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123711_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _124204_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _124188_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124204_/CK (DFF_X1)
+   0.08    0.08 v _124204_/Q (DFF_X1)
+   0.02    0.09 ^ _062122_/ZN (INV_X1)
+   0.01    0.11 v _108164_/ZN (AOI21_X1)
+   0.00    0.11 v _124188_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124188_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _109124_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _109124_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109124_/CK (DFF_X1)
+   0.08    0.08 v _109124_/Q (DFF_X1)
+   0.02    0.09 ^ _062117_/ZN (INV_X1)
+   0.01    0.11 v _094284_/ZN (AOI211_X1)
+   0.00    0.11 v _109124_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109124_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _109124_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _124285_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109124_/CK (DFF_X1)
+   0.08    0.08 v _109124_/Q (DFF_X1)
+   0.02    0.09 ^ _062117_/ZN (INV_X1)
+   0.01    0.11 v _108180_/ZN (AOI21_X1)
+   0.00    0.11 v _124285_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124285_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _124204_ (rising edge-triggered flip-flop clocked by fir_clk)
+Endpoint: _124204_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124204_/CK (DFF_X1)
+   0.08    0.08 v _124204_/Q (DFF_X1)
+   0.02    0.09 ^ _062122_/ZN (INV_X1)
+   0.01    0.11 v _108166_/ZN (AOI211_X1)
+   0.00    0.11 v _124204_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124204_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123704_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123712_ (rising edge-triggered flip-flop clocked by fir_clk)
+Path Group: fir_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123704_/CK (DFF_X1)
+   0.08    0.08 v _123704_/Q (DFF_X1)
+   0.03    0.11 v _076567_/ZN (AND2_X1)
+   0.00    0.11 v _123712_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123712_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123701_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123701_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123701_/CK (DFF_X1)
+   0.06    0.06 ^ _123701_/QN (DFF_X1)
+   0.03    0.09 ^ _076588_/ZN (AND2_X1)
+   0.00    0.09 ^ _123701_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123701_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123702_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123702_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123702_/CK (DFF_X1)
+   0.08    0.08 v _123702_/Q (DFF_X1)
+   0.02    0.11 ^ _076587_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123702_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123702_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123707_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123707_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123707_/CK (DFF_X1)
+   0.08    0.08 v _123707_/Q (DFF_X1)
+   0.03    0.11 ^ _076577_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123707_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123707_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123702_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123703_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123702_/CK (DFF_X1)
+   0.08    0.08 v _123702_/Q (DFF_X1)
+   0.03    0.11 ^ _076584_/ZN (AOI21_X1)
+   0.01    0.12 v _076585_/ZN (NOR3_X1)
+   0.00    0.12 v _123703_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123703_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123706_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123706_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123706_/CK (DFF_X1)
+   0.08    0.08 v _123706_/Q (DFF_X1)
+   0.03    0.11 ^ _076578_/ZN (OAI21_X1)
+   0.01    0.12 v _076579_/ZN (NOR2_X1)
+   0.00    0.12 v _123706_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123706_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123705_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123705_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123705_/CK (DFF_X1)
+   0.08    0.08 v _123705_/Q (DFF_X1)
+   0.03    0.11 ^ _076580_/ZN (OAI21_X1)
+   0.01    0.12 v _076581_/ZN (NOR2_X1)
+   0.00    0.12 v _123705_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123705_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123704_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123704_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123704_/CK (DFF_X1)
+   0.08    0.08 v _123704_/Q (DFF_X1)
+   0.03    0.11 ^ _076582_/ZN (OAI21_X1)
+   0.01    0.12 v _076583_/ZN (NOR2_X1)
+   0.00    0.12 v _123704_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123704_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123708_ (rising edge-triggered flip-flop clocked by fir_div32)
+Endpoint: _123708_ (rising edge-triggered flip-flop clocked by fir_div32)
+Path Group: fir_div32
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123708_/CK (DFF_X1)
+   0.08    0.08 v _123708_/Q (DFF_X1)
+   0.02    0.10 ^ _063253_/ZN (INV_X1)
+   0.01    0.11 v _108452_/ZN (XNOR2_X1)
+   0.02    0.13 ^ _108453_/ZN (NOR2_X1)
+   0.00    0.13 ^ _123708_/D (DFF_X1)
+           0.13   data arrival time
+
+   0.00    0.00   clock fir_div32 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123708_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.13   data arrival time
+---------------------------------------------------------
+           0.13   slack (MET)
+
+
+Startpoint: sda_pad_i (input port clocked by i2c_clk)
+Endpoint: _123408_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ input external delay
+   0.00    0.00 ^ sda_pad_i (in)
+   0.03    0.03 ^ _077324_/ZN (AND2_X1)
+   0.00    0.03 ^ _123408_/D (DFF_X1)
+           0.03   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123408_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.03   data arrival time
+---------------------------------------------------------
+           0.02   slack (MET)
+
+
+Startpoint: scl_pad_i (input port clocked by i2c_clk)
+Endpoint: _123414_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ input external delay
+   0.00    0.00 ^ scl_pad_i (in)
+   0.03    0.03 ^ _077323_/ZN (AND2_X1)
+   0.00    0.03 ^ _123414_/D (DFF_X1)
+           0.03   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123414_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.03   data arrival time
+---------------------------------------------------------
+           0.02   slack (MET)
+
+
+Startpoint: _123588_/Q (clock source 'i2c_div8')
+Endpoint: _123588_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   3.60    3.60   clock i2c_div8 (fall edge)
+   0.00    3.60 v _123588_/Q (DFF_X1)
+   0.02    3.62 ^ _108406_/ZN (NOR2_X1)
+   0.01    3.64 v _108407_/ZN (AOI211_X1)
+   0.00    3.64 v _123588_/D (DFF_X1)
+           3.64   data arrival time
+
+   3.60    3.60   clock i2c_clk (rise edge)
+   0.00    3.60   clock network delay (ideal)
+   0.00    3.60   clock reconvergence pessimism
+           3.60 ^ _123588_/CK (DFF_X1)
+   0.00    3.60   library hold time
+           3.60   data required time
+---------------------------------------------------------
+           3.60   data required time
+          -3.64   data arrival time
+---------------------------------------------------------
+           0.04   slack (MET)
+
+
+Startpoint: _108902_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _109193_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108902_/CK (DFF_X1)
+   0.06    0.06 ^ _108902_/QN (DFF_X1)
+   0.01    0.07 v _108257_/ZN (NOR3_X1)
+   0.00    0.07 v _109193_/D (DFF_X1)
+           0.07   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109193_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.07   data arrival time
+---------------------------------------------------------
+           0.07   slack (MET)
+
+
+Startpoint: _123379_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123509_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123379_/CK (DFF_X1)
+   0.06    0.06 ^ _123379_/QN (DFF_X1)
+   0.02    0.08 ^ _108234_/ZN (OR2_X1)
+   0.00    0.08 ^ _123509_/D (DFF_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123509_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123506_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108904_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123506_/CK (DFF_X1)
+   0.08    0.08 v _123506_/Q (DFF_X1)
+   0.00    0.08 v _108904_/D (DFF_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108904_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108908_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108905_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108908_/CK (DFFR_X1)
+   0.08    0.08 v _108908_/Q (DFFR_X1)
+   0.00    0.08 v _108905_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108905_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108909_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108906_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108909_/CK (DFFR_X1)
+   0.08    0.08 v _108909_/Q (DFFR_X1)
+   0.00    0.08 v _108906_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108906_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108910_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108907_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108910_/CK (DFFR_X1)
+   0.08    0.08 v _108910_/Q (DFFR_X1)
+   0.00    0.08 v _108907_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108907_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108970_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108967_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108970_/CK (DFFR_X1)
+   0.08    0.08 v _108970_/Q (DFFR_X1)
+   0.00    0.08 v _108967_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108967_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108971_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108968_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108971_/CK (DFFR_X1)
+   0.08    0.08 v _108971_/Q (DFFR_X1)
+   0.00    0.08 v _108968_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108968_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108972_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108969_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108972_/CK (DFFR_X1)
+   0.08    0.08 v _108972_/Q (DFFR_X1)
+   0.00    0.08 v _108969_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108969_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108892_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _108892_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108892_/CK (DFF_X1)
+   0.06    0.06 ^ _108892_/QN (DFF_X1)
+   0.03    0.09 ^ _108240_/ZN (AND2_X1)
+   0.00    0.09 ^ _108892_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108892_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123577_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123586_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123577_/CK (DFF_X1)
+   0.06    0.06 v _123577_/QN (DFF_X1)
+   0.01    0.08 ^ _064524_/ZN (INV_X1)
+   0.01    0.09 v _107747_/ZN (AOI211_X1)
+   0.00    0.09 v _123586_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123586_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123576_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123379_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123576_/CK (DFF_X1)
+   0.06    0.06 v _123576_/QN (DFF_X1)
+   0.01    0.08 ^ _062106_/ZN (INV_X1)
+   0.01    0.09 v _108380_/ZN (AOI21_X1)
+   0.00    0.09 v _123379_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123379_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123417_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123417_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123417_/CK (DFF_X1)
+   0.06    0.06 v _123417_/QN (DFF_X1)
+   0.01    0.08 ^ _063841_/ZN (INV_X1)
+   0.01    0.09 v _077322_/ZN (OAI21_X1)
+   0.00    0.09 v _123417_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123417_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123435_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123435_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123435_/CK (DFF_X1)
+   0.06    0.06 v _123435_/QN (DFF_X1)
+   0.01    0.08 ^ _063870_/ZN (INV_X1)
+   0.01    0.09 v _077248_/ZN (AOI211_X1)
+   0.00    0.09 v _123435_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123435_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123491_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123491_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123491_/CK (DFF_X1)
+   0.06    0.06 v _123491_/QN (DFF_X1)
+   0.01    0.08 ^ _062191_/ZN (INV_X1)
+   0.01    0.09 v _077037_/ZN (AOI211_X1)
+   0.00    0.09 v _123491_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123491_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _124319_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _124319_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124319_/CK (DFF_X1)
+   0.06    0.06 ^ _124319_/QN (DFF_X1)
+   0.03    0.09 ^ _069780_/ZN (AND2_X1)
+   0.00    0.09 ^ _124319_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124319_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123412_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Endpoint: _123416_ (rising edge-triggered flip-flop clocked by i2c_clk)
+Path Group: i2c_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123412_/CK (DFF_X1)
+   0.06    0.06 v _123412_/QN (DFF_X1)
+   0.02    0.08 ^ _108323_/ZN (OAI21_X1)
+   0.01    0.09 v _108324_/ZN (NOR2_X1)
+   0.00    0.09 v _123416_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123416_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123589_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123589_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123589_/CK (DFF_X1)
+   0.06    0.06 ^ _123589_/QN (DFF_X1)
+   0.03    0.09 ^ _076837_/ZN (AND2_X1)
+   0.00    0.09 ^ _123589_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123589_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123590_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123590_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123590_/CK (DFF_X1)
+   0.08    0.08 v _123590_/Q (DFF_X1)
+   0.02    0.11 ^ _076836_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123590_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123590_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123595_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123595_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123595_/CK (DFF_X1)
+   0.08    0.08 v _123595_/Q (DFF_X1)
+   0.03    0.11 ^ _076826_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123595_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123595_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123596_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123596_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123596_/CK (DFF_X1)
+   0.08    0.08 v _123596_/Q (DFF_X1)
+   0.03    0.11 ^ _108182_/Z (XOR2_X1)
+   0.01    0.12 v _108183_/ZN (NOR2_X1)
+   0.00    0.12 v _123596_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123596_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123590_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123591_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123590_/CK (DFF_X1)
+   0.08    0.08 v _123590_/Q (DFF_X1)
+   0.03    0.11 ^ _076833_/ZN (AOI21_X1)
+   0.01    0.12 v _076834_/ZN (NOR3_X1)
+   0.00    0.12 v _123591_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123591_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123594_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123594_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123594_/CK (DFF_X1)
+   0.08    0.08 v _123594_/Q (DFF_X1)
+   0.03    0.11 ^ _076827_/ZN (OAI21_X1)
+   0.01    0.12 v _076828_/ZN (NOR2_X1)
+   0.00    0.12 v _123594_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123594_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123593_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123593_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123593_/CK (DFF_X1)
+   0.08    0.08 v _123593_/Q (DFF_X1)
+   0.03    0.11 ^ _076829_/ZN (OAI21_X1)
+   0.01    0.12 v _076830_/ZN (NOR2_X1)
+   0.00    0.12 v _123593_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123593_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123592_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Endpoint: _123592_ (rising edge-triggered flip-flop clocked by i2c_div8)
+Path Group: i2c_div8
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123592_/CK (DFF_X1)
+   0.08    0.08 v _123592_/Q (DFF_X1)
+   0.03    0.11 ^ _076831_/ZN (OAI21_X1)
+   0.01    0.12 v _076832_/ZN (NOR2_X1)
+   0.00    0.12 v _123592_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock i2c_div8 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123592_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: miso_i (input port clocked by spi_clk)
+Endpoint: _123898_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ input external delay
+   0.00    0.00 ^ miso_i (in)
+   0.02    0.02 v _075592_/ZN (AOI221_X1)
+   0.03    0.04 ^ _075593_/ZN (NOR2_X1)
+   0.00    0.04 ^ _123898_/D (DFF_X1)
+           0.04   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123898_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.04   data arrival time
+---------------------------------------------------------
+           0.03   slack (MET)
+
+
+Startpoint: _123641_/Q (clock source 'spi_div16')
+Endpoint: _123641_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   4.96    4.96   clock spi_div16 (fall edge)
+   0.00    4.96 v _123641_/Q (DFF_X1)
+   0.02    4.98 ^ _108441_/ZN (NOR2_X1)
+   0.01    5.00 v _108442_/ZN (AOI211_X1)
+   0.00    5.00 v _123641_/D (DFF_X1)
+           5.00   data arrival time
+
+   4.96    4.96   clock spi_clk (rise edge)
+   0.00    4.96   clock network delay (ideal)
+   0.00    4.96   clock reconvergence pessimism
+           4.96 ^ _123641_/CK (DFF_X1)
+   0.00    4.96   library hold time
+           4.96   data required time
+---------------------------------------------------------
+           4.96   data required time
+          -5.00   data arrival time
+---------------------------------------------------------
+           0.04   slack (MET)
+
+
+Startpoint: _124269_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: ss_o (output port clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124269_/CK (DFF_X1)
+   0.06    0.06 ^ _124269_/QN (DFF_X1)
+   0.00    0.06 ^ ss_o (out)
+           0.06   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.06   data arrival time
+---------------------------------------------------------
+           0.06   slack (MET)
+
+
+Startpoint: _123908_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: sck_o (output port clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123908_/CK (DFF_X1)
+   0.08    0.08 v _123908_/Q (DFF_X1)
+   0.00    0.08 v sck_o (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109000_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108997_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109000_/CK (DFFR_X1)
+   0.08    0.08 v _109000_/Q (DFFR_X1)
+   0.00    0.08 v _108997_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108997_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109001_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108998_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109001_/CK (DFFR_X1)
+   0.08    0.08 v _109001_/Q (DFFR_X1)
+   0.00    0.08 v _108998_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108998_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109002_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108999_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109002_/CK (DFFR_X1)
+   0.08    0.08 v _109002_/Q (DFFR_X1)
+   0.00    0.08 v _108999_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108999_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109030_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _109027_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109030_/CK (DFFR_X1)
+   0.08    0.08 v _109030_/Q (DFFR_X1)
+   0.00    0.08 v _109027_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109027_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109031_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _109028_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109031_/CK (DFFR_X1)
+   0.08    0.08 v _109031_/Q (DFFR_X1)
+   0.00    0.08 v _109028_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109028_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _109032_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _109029_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _109032_/CK (DFFR_X1)
+   0.08    0.08 v _109032_/Q (DFFR_X1)
+   0.00    0.08 v _109029_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _109029_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123905_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: mosi_o (output port clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123905_/CK (DFF_X1)
+   0.08    0.08 v _123905_/Q (DFF_X1)
+   0.00    0.08 v mosi_o (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123874_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _123874_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123874_/CK (DFFR_X1)
+   0.06    0.06 v _123874_/QN (DFFR_X1)
+   0.01    0.08 ^ _064431_/ZN (INV_X1)
+   0.01    0.09 v _064552_/ZN (OAI21_X1)
+   0.00    0.09 v _123874_/D (DFFR_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123874_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123880_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _123880_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123880_/CK (DFFR_X1)
+   0.06    0.06 v _123880_/QN (DFFR_X1)
+   0.01    0.08 ^ _064434_/ZN (INV_X1)
+   0.01    0.09 v _064555_/ZN (OAI22_X1)
+   0.00    0.09 v _123880_/D (DFFR_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123880_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _108985_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108985_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108985_/CK (DFF_X1)
+   0.06    0.06 ^ _108985_/QN (DFF_X1)
+   0.01    0.07 v _105378_/ZN (NOR2_X1)
+   0.03    0.10 ^ _105379_/ZN (AOI21_X1)
+   0.00    0.10 ^ _108985_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108985_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _108991_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108991_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108991_/CK (DFF_X1)
+   0.06    0.06 ^ _108991_/QN (DFF_X1)
+   0.02    0.08 v _105362_/ZN (OAI21_X1)
+   0.01    0.09 ^ _105363_/ZN (NAND2_X1)
+   0.00    0.09 ^ _108991_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108991_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123637_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _123637_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123637_/CK (DFF_X1)
+   0.06    0.06 ^ _123637_/QN (DFF_X1)
+   0.03    0.10 ^ _076713_/ZN (AND2_X1)
+   0.00    0.10 ^ _123637_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123637_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123877_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _110976_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123877_/CK (DFF_X1)
+   0.06    0.06 ^ _123877_/QN (DFF_X1)
+   0.02    0.08 v _104999_/ZN (NAND3_X1)
+   0.02    0.10 ^ _105002_/ZN (NAND3_X1)
+   0.00    0.10 ^ _110976_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _110976_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123890_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _123890_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123890_/CK (DFF_X1)
+   0.06    0.06 v _123890_/QN (DFF_X1)
+   0.03    0.09 v _107784_/ZN (AND3_X1)
+   0.00    0.09 v _123890_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123890_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123263_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _108988_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123263_/CK (DFF_X1)
+   0.06    0.06 ^ _123263_/QN (DFF_X1)
+   0.02    0.08 v _105367_/ZN (AOI211_X1)
+   0.02    0.10 ^ _105371_/ZN (AOI22_X1)
+   0.00    0.10 ^ _108988_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108988_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123872_ (rising edge-triggered flip-flop clocked by spi_clk)
+Endpoint: _123872_ (rising edge-triggered flip-flop clocked by spi_clk)
+Path Group: spi_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123872_/CK (DFFR_X1)
+   0.07    0.07 v _123872_/QN (DFFR_X1)
+   0.01    0.08 ^ _064430_/ZN (INV_X1)
+   0.01    0.10 v _064550_/ZN (OAI21_X1)
+   0.00    0.10 v _123872_/D (DFFR_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock spi_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123872_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123642_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123642_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123642_/CK (DFF_X1)
+   0.06    0.06 ^ _123642_/QN (DFF_X1)
+   0.03    0.09 ^ _076705_/ZN (AND2_X1)
+   0.00    0.09 ^ _123642_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123642_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123643_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123643_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123643_/CK (DFF_X1)
+   0.08    0.08 v _123643_/Q (DFF_X1)
+   0.02    0.11 ^ _076704_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123643_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123643_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123648_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123648_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123648_/CK (DFF_X1)
+   0.08    0.08 v _123648_/Q (DFF_X1)
+   0.03    0.11 ^ _076694_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123648_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123648_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123643_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123644_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123643_/CK (DFF_X1)
+   0.08    0.08 v _123643_/Q (DFF_X1)
+   0.03    0.11 ^ _076701_/ZN (AOI21_X1)
+   0.01    0.12 v _076702_/ZN (NOR3_X1)
+   0.00    0.12 v _123644_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123644_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123647_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123647_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123647_/CK (DFF_X1)
+   0.08    0.08 v _123647_/Q (DFF_X1)
+   0.03    0.11 ^ _076695_/ZN (OAI21_X1)
+   0.01    0.12 v _076696_/ZN (NOR2_X1)
+   0.00    0.12 v _123647_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123647_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123645_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123645_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123645_/CK (DFF_X1)
+   0.08    0.08 v _123645_/Q (DFF_X1)
+   0.03    0.11 ^ _076699_/ZN (OAI21_X1)
+   0.01    0.12 v _076700_/ZN (NOR2_X1)
+   0.00    0.12 v _123645_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123645_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123646_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123646_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123646_/CK (DFF_X1)
+   0.08    0.08 v _123646_/Q (DFF_X1)
+   0.03    0.11 ^ _076697_/ZN (OAI21_X1)
+   0.01    0.12 v _076698_/ZN (NOR2_X1)
+   0.00    0.12 v _123646_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123646_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123649_ (rising edge-triggered flip-flop clocked by spi_div16)
+Endpoint: _123649_ (rising edge-triggered flip-flop clocked by spi_div16)
+Path Group: spi_div16
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123649_/CK (DFF_X1)
+   0.08    0.08 v _123649_/Q (DFF_X1)
+   0.02    0.10 ^ _063245_/ZN (INV_X1)
+   0.01    0.11 v _108400_/ZN (XNOR2_X1)
+   0.02    0.13 ^ _108401_/ZN (NOR2_X1)
+   0.00    0.13 ^ _123649_/D (DFF_X1)
+           0.13   data arrival time
+
+   0.00    0.00   clock spi_div16 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123649_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.13   data arrival time
+---------------------------------------------------------
+           0.13   slack (MET)
+
+
+Startpoint: uart_rxd (input port clocked by uart_clk)
+Endpoint: _123685_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ input external delay
+   0.00    0.00 ^ uart_rxd (in)
+   0.02    0.02 ^ _107761_/ZN (OR2_X1)
+   0.00    0.02 ^ _123685_/D (DFF_X1)
+           0.02   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123685_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.02   data arrival time
+---------------------------------------------------------
+           0.01   slack (MET)
+
+
+Startpoint: _123519_/Q (clock source 'uart_div4')
+Endpoint: _123519_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   1.92    1.92   clock uart_div4 (fall edge)
+   0.00    1.92 v _123519_/Q (DFF_X1)
+   0.02    1.94 ^ _108214_/ZN (NOR2_X1)
+   0.01    1.96 v _108215_/ZN (AOI211_X1)
+   0.00    1.96 v _123519_/D (DFF_X1)
+           1.96   data arrival time
+
+   1.92    1.92   clock uart_clk (rise edge)
+   0.00    1.92   clock network delay (ideal)
+   0.00    1.92   clock reconvergence pessimism
+           1.92 ^ _123519_/CK (DFF_X1)
+   0.00    1.92   library hold time
+           1.92   data required time
+---------------------------------------------------------
+           1.92   data required time
+          -1.96   data arrival time
+---------------------------------------------------------
+           0.04   slack (MET)
+
+
+Startpoint: _123636_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: uart_txd (output port clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123636_/CK (DFF_X1)
+   0.08    0.08 v _123636_/Q (DFF_X1)
+   0.00    0.08 v uart_txd (out)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+   0.00    0.00   output external delay
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108867_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _108862_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108867_/CK (DFFR_X1)
+   0.08    0.08 v _108867_/Q (DFFR_X1)
+   0.00    0.08 v _108862_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108862_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108868_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _108863_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108868_/CK (DFFR_X1)
+   0.08    0.08 v _108868_/Q (DFFR_X1)
+   0.00    0.08 v _108863_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108863_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108869_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _108864_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108869_/CK (DFFR_X1)
+   0.08    0.08 v _108869_/Q (DFFR_X1)
+   0.00    0.08 v _108864_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108864_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108870_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _108865_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108870_/CK (DFFR_X1)
+   0.08    0.08 v _108870_/Q (DFFR_X1)
+   0.00    0.08 v _108865_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108865_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _108871_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _108866_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _108871_/CK (DFFR_X1)
+   0.08    0.08 v _108871_/Q (DFFR_X1)
+   0.00    0.08 v _108866_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _108866_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _124405_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124400_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124405_/CK (DFFR_X1)
+   0.08    0.08 v _124405_/Q (DFFR_X1)
+   0.00    0.08 v _124400_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124400_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _124406_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124401_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124406_/CK (DFFR_X1)
+   0.08    0.08 v _124406_/Q (DFFR_X1)
+   0.00    0.08 v _124401_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124401_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _124407_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124402_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124407_/CK (DFFR_X1)
+   0.08    0.08 v _124407_/Q (DFFR_X1)
+   0.00    0.08 v _124402_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124402_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _124408_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124403_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124408_/CK (DFFR_X1)
+   0.08    0.08 v _124408_/Q (DFFR_X1)
+   0.00    0.08 v _124403_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124403_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _124409_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124404_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124409_/CK (DFFR_X1)
+   0.08    0.08 v _124409_/Q (DFFR_X1)
+   0.00    0.08 v _124404_/D (DFFR_X1)
+           0.08   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124404_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.08   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123666_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _123666_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123666_/CK (DFF_X1)
+   0.06    0.06 v _123666_/QN (DFF_X1)
+   0.01    0.08 ^ _062223_/ZN (INV_X1)
+   0.01    0.09 v _076672_/ZN (AOI21_X1)
+   0.00    0.09 v _123666_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123666_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123517_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _123517_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123517_/CK (DFF_X1)
+   0.06    0.06 ^ _123517_/QN (DFF_X1)
+   0.03    0.10 ^ _076956_/ZN (AND2_X1)
+   0.00    0.10 ^ _123517_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123517_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _123686_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _118718_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123686_/CK (DFF_X1)
+   0.06    0.06 ^ _123686_/QN (DFF_X1)
+   0.01    0.08 v _076619_/ZN (AOI221_X1)
+   0.02    0.10 ^ _076620_/ZN (NOR2_X1)
+   0.00    0.10 ^ _118718_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _118718_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)
+
+
+Startpoint: _124403_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _124420_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _124403_/CK (DFFR_X1)
+   0.07    0.07 ^ _124403_/QN (DFFR_X1)
+   0.01    0.08 v _108466_/Z (XOR2_X1)
+   0.03    0.11 ^ _108472_/ZN (NOR3_X1)
+   0.00    0.11 ^ _124420_/D (DFFR_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _124420_/CK (DFFR_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123669_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _123669_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123669_/CK (DFF_X1)
+   0.09    0.09 ^ _123669_/Q (DFF_X1)
+   0.01    0.10 v _107870_/ZN (AOI21_X1)
+   0.00    0.10 v _123669_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123669_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123685_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _123686_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123685_/CK (DFF_X1)
+   0.08    0.08 ^ _123685_/Q (DFF_X1)
+   0.02    0.11 ^ _108259_/ZN (OR2_X1)
+   0.00    0.11 ^ _123686_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123686_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123636_ (rising edge-triggered flip-flop clocked by uart_clk)
+Endpoint: _123636_ (rising edge-triggered flip-flop clocked by uart_clk)
+Path Group: uart_clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123636_/CK (DFF_X1)
+   0.08    0.08 v _123636_/Q (DFF_X1)
+   0.01    0.09 ^ _062155_/ZN (INV_X1)
+   0.01    0.10 v _107823_/ZN (OAI21_X1)
+   0.00    0.10 v _123636_/D (DFF_X1)
+           0.10   data arrival time
+
+   0.00    0.00   clock uart_clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123636_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.10   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123520_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123520_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123520_/CK (DFF_X1)
+   0.06    0.06 ^ _123520_/QN (DFF_X1)
+   0.03    0.09 ^ _076954_/ZN (AND2_X1)
+   0.00    0.09 ^ _123520_/D (DFF_X1)
+           0.09   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123520_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.09   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+Startpoint: _123521_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123521_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123521_/CK (DFF_X1)
+   0.08    0.08 v _123521_/Q (DFF_X1)
+   0.02    0.11 ^ _076953_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123521_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123521_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.10   slack (MET)
+
+
+Startpoint: _123526_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123526_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123526_/CK (DFF_X1)
+   0.08    0.08 v _123526_/Q (DFF_X1)
+   0.03    0.11 ^ _076943_/ZN (AOI21_X1)
+   0.00    0.11 ^ _123526_/D (DFF_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123526_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+Startpoint: _123521_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123522_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123521_/CK (DFF_X1)
+   0.08    0.08 v _123521_/Q (DFF_X1)
+   0.03    0.11 ^ _076950_/ZN (AOI21_X1)
+   0.01    0.12 v _076951_/ZN (NOR3_X1)
+   0.00    0.12 v _123522_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123522_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123525_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123525_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123525_/CK (DFF_X1)
+   0.08    0.08 v _123525_/Q (DFF_X1)
+   0.03    0.11 ^ _076944_/ZN (OAI21_X1)
+   0.01    0.12 v _076945_/ZN (NOR2_X1)
+   0.00    0.12 v _123525_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123525_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123523_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123523_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123523_/CK (DFF_X1)
+   0.08    0.08 v _123523_/Q (DFF_X1)
+   0.03    0.11 ^ _076948_/ZN (OAI21_X1)
+   0.01    0.12 v _076949_/ZN (NOR2_X1)
+   0.00    0.12 v _123523_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123523_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123524_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123524_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123524_/CK (DFF_X1)
+   0.08    0.08 v _123524_/Q (DFF_X1)
+   0.03    0.11 ^ _076946_/ZN (OAI21_X1)
+   0.01    0.12 v _076947_/ZN (NOR2_X1)
+   0.00    0.12 v _123524_/D (DFF_X1)
+           0.12   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123524_/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.12   data arrival time
+---------------------------------------------------------
+           0.12   slack (MET)
+
+
+Startpoint: _123527_ (rising edge-triggered flip-flop clocked by uart_div4)
+Endpoint: _123527_ (rising edge-triggered flip-flop clocked by uart_div4)
+Path Group: uart_div4
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _123527_/CK (DFF_X1)
+   0.08    0.08 v _123527_/Q (DFF_X1)
+   0.02    0.10 ^ _062994_/ZN (INV_X1)
+   0.01    0.11 v _107640_/ZN (XNOR2_X1)
+   0.02    0.13 ^ _107641_/ZN (NOR2_X1)
+   0.00    0.13 ^ _123527_/D (DFF_X1)
+           0.13   data arrival time
+
+   0.00    0.00   clock uart_div4 (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _123527_/CK (DFF_X1)
+   0.01    0.01   library hold time
+           0.01   data required time
+---------------------------------------------------------
+           0.01   data required time
+          -0.13   data arrival time
+---------------------------------------------------------
+           0.13   slack (MET)
+
+

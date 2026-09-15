@@ -1,3 +1,4 @@
+set ORFS [expr {[info exists env(ORFS)] ? $env(ORFS) : "/OpenROAD-flow-scripts"}]
 # ============================================================
 # Track A - sta_fir.tcl
 # Run: sta sta_fir.tcl
@@ -5,7 +6,7 @@
 # EDIT: liberty path
 # ============================================================
  
-read_liberty /home/nihal/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_liberty $ORFS/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
 read_verilog netlist/fir_wrapper_netlist_clean.v
 link_design fir_wrapper
  

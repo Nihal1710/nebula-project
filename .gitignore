@@ -11,6 +11,7 @@ __pycache__/
 
 # --- synthesis outputs; regenerate with `yosys synth_soc_top.ys` ---
 netlist/*.v
+!netlist/.gitkeep
 
 # --- scratch ---
 *.bak
