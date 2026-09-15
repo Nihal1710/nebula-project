@@ -1,0 +1,258 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+    "start_line": 170,
+    "end_line": 180,
+    "scope": "snippet"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "no_fix",
+    "target_module": "uart_rx",
+    "added_latency_cycles": 0,
+    "modified_rtl": "",
+    "rationale": "The shown scope (lines 170-180) is only the cycle_counter register's next-state assignment. On the reported path, this register (_124902_) is the STARTPOINT \u2014 its only contribution is the clk-to-Q delay of cell #0 (DFF_X1, 0.080 ns). None of the 12 unattributed combinational cells (#1-#12: NOR4/NAND4/OAI22/NOR2/AOI211/AND3/AND3/NAND3/XOR2/XOR2/XOR2/NOR3) appear anywhere in the RTL I was given \u2014 there is no combinational logic downstream of cycle_counter in this always block at all; it only ever feeds back into itself. Consequently there is nothing here to retime (no register sits inside the combinational chain within this scope \u2014 the only register is the startpoint itself, and moving it would change when cycle_counter updates, altering FSM timing), nothing to restructure (the combinational chain that needs shortening is not present in this code), and no safe place to insert a pipeline register (splitting logic I cannot see risks breaking reconvergent paths I have no visibility into, and violates the 'don't edit unseen code' rule). The endpoint (_125646_, DFFR_X1) is attributed to rtl/vendor/async_fifo/rtl/wptr_full.v:52, and the last three stages on the path (three XOR2_X1 gates followed by a NOR3_X1) match the classic binary-to-Gray-code conversion pattern used to drive an async-FIFO write pointer register \u2014 strongly suggesting the dominant combinational logic sits in or near wptr_full.v (or a connecting glue module not shown to me at all), not in uart_rx.v. Since none of the critical gates are attributable to the file/lines I was permitted to edit, no safe fix exists in this scope.",
+    "out_of_scope_fix": {
+      "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+      "start_line": 1,
+      "end_line": 52,
+      "confidence": "medium",
+      "reason": "The final path stages (three XOR2_X1 gates feeding a NOR3_X1 into the DFFR_X1 endpoint attributed to wptr_full.v:52) match the standard binary-to-Gray-code pointer computation performed immediately before the write-pointer register in an async FIFO; the bulk of the unattributed combinational chain most likely lives in this file's pointer/comparison logic rather than in the uart_rx counter that merely supplies one operand."
+    }
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": null,
+    "tier": null,
+    "refused": true
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-sonnet-5",
+    "num_turns": 2,
+    "cost_usd": 0.0286494,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 2284,
+        "outputTokens": 26,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.002414,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 2531,
+        "cacheReadInputTokens": 4607,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0262354,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 1528,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "403f847c-df66-4643-9794-e4af8da6ab0e"
+  }
+}

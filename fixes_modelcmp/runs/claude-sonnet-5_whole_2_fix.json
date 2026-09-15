@@ -1,0 +1,258 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+    "start_line": 1,
+    "end_line": 214,
+    "scope": "file"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "no_fix",
+    "target_module": "uart_rx",
+    "added_latency_cycles": 0,
+    "modified_rtl": "",
+    "rationale": "The startpoint DFF (_124902_, uart_rx.v:170) is the rxd_reg register in p_rxd_reg \u2014 a simple synchronizer flop whose only local fan-out inside uart_rx.v feeds the FSM next-state case, the break/valid comparisons, and the bit_sample mux, none of which involve NOR4/NAND4/OAI22/AOI211/AND3xAND3/NAND3 chained into three XOR2s and a NOR3. That 12-cell, 0.94 ns chain (peaking at a 0.13 ns AND3) is structurally characteristic of a binary-to-Gray encode plus almost-full pointer comparison \u2014 exactly the kind of logic that lives in the async_fifo write-pointer/full-flag block, not in uart_rx. This is corroborated by the endpoint: _125646_ is a DFFR_X1 physically sourced to rtl/vendor/async_fifo/rtl/wptr_full.v:52, i.e. the capturing register belongs to a completely different module than the launching flop, and none of the 12 unattributed cells map to any RTL shown to me.\n\nWithin the uart_rx.v scope I was given, there is no register sitting inside this combinational chain to retime (rxd_reg is the very first stage, and its only reachable next register within this file, e.g. bit_sample or fsm_state, does not sit on this particular 12-gate chain), so RETIME is not available here. There is also no combinational expression in the shown RTL that corresponds to this gate sequence, so I cannot RESTRUCTURE logic I cannot see and cannot verify is mine to change. Inserting a PIPELINE stage inside uart_rx would not necessarily cut the actual critical portion of the chain (which appears to sit downstream, in the fifo module) and risks mis-balancing reconvergent full-flag/gray-code paths in a module I have no visibility into \u2014 an unsafe, unverifiable change.\n\nCorrect fix requires seeing the actual combinational logic between the pointer register and the full-flag DFFR_X1 in wptr_full.v (bin2gray conversion / almost-full comparator around the register at line 52), which is out of my edit scope.",
+    "out_of_scope_fix": {
+      "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+      "start_line": 1,
+      "end_line": 52,
+      "confidence": "low",
+      "reason": "The endpoint register (_125646_) is physically attributed to wptr_full.v:52 and the 12 unattributed gates (NOR4/NAND4/OAI22/AOI211/AND3-AND3/NAND3 feeding three XOR2s and a NOR3) match a Gray-code pointer encode/compare structure typical of async FIFO full-flag generation; this logic is not present in the uart_rx.v scope shown, so the retimable register or restructurable expression likely lives in that file, but I have not seen its source to confirm."
+    }
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": null,
+    "tier": null,
+    "refused": true
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-sonnet-5",
+    "num_turns": 2,
+    "cost_usd": 0.0315106,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 4288,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.004353,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 2571,
+        "cacheReadInputTokens": 7218,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0271576,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 1419,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "24cf24f3-2e5d-4924-b35d-c10007cc2083"
+  }
+}

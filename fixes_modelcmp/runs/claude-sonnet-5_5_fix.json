@@ -1,0 +1,258 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+    "start_line": 170,
+    "end_line": 180,
+    "scope": "snippet"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "added_latency_cycles": 0,
+    "fix_type": "no_fix",
+    "modified_rtl": "",
+    "out_of_scope_fix": {
+      "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+      "start_line": 30,
+      "end_line": 52,
+      "confidence": "low",
+      "reason": "The endpoint DFFR_X1 at wptr_full.v:52 is fed by a chain of three XOR2_X1 gates and a NOR3_X1 immediately upstream, which is the classic signature of a binary-increment-then-Gray-encode pointer update in an async FIFO; that logic, not the uart_rx counter, sits right before the failing register and is the most likely place a retime/restructure of the increment+gray-encode chain would actually shorten this path."
+    },
+    "rationale": "The only cell in the reported path that is attributed to the given scope (uart_rx.v:170-180) is stage 0, the cycle_counter DFF itself, which is the path's *startpoint* register - i.e. the launching flop, not any combinational logic in between. All 12 intervening gates (NOR4, NAND4, OAI22, NOR2, AOI211, AND3x2, NAND3, XOR2x3, NOR3) and the capturing register (_125646_, a DFFR_X1 in a completely different file, rtl/vendor/async_fifo/rtl/wptr_full.v:52) are outside the RTL block I was given. The always-block shown only describes how cycle_counter itself is incremented/cleared each cycle; it is not on the reconvergent combinational chain that actually accumulates the 0.940 ns of delay - that logic evidently lives downstream, consuming cycle_counter's value (or some FSM-derived signal) and ultimately driving a write-pointer register in an unrelated async-FIFO module. Because of this: RETIME is not available - there is no register inside the combinational chain shown to me that could be slid across logic; the only register in my scope is the path's own startpoint, and moving a launch flop off its own path is not a legal retime. RESTRUCTURE is not applicable either - rewriting the cycle_counter add/compare in this block would change nothing about the actual bottleneck, since that arithmetic is not the chain reported (a simple +1 counter increment is not 12 gates deep, and the shown block has no fanout to wptr_full.v). PIPELINE is unsafe here - inserting a register into cycle_counter's own update path would delay every FSM state comparison that depends on cycle_counter, without necessarily even touching the real critical net, and I cannot verify or rebalance the reconvergent paths in wptr_full.v/FSM logic that I have not been shown. Given none of the three safe strategies can be soundly applied to the RTL I was given, I'm declaring no_fix at this scope. Based on the gate sequence (three XOR2 stages feeding a NOR3 directly into the wptr_full.v DFFR), the dominant delay most plausibly belongs to the binary-to-Gray pointer increment logic in wptr_full.v around its register-update block (line ~52), which is a natural place to retime an intermediate register or restructure the increment/XOR chain into a shallower form - but I have not been shown that file, so this is flagged as a low-confidence, out-of-scope candidate rather than a fix.",
+    "target_module": "uart_rx"
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": null,
+    "tier": null,
+    "refused": true
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-sonnet-5",
+    "num_turns": 2,
+    "cost_usd": 0.038534399999999996,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 2284,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.002349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 3526,
+        "cacheReadInputTokens": 4607,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0361854,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 2288,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "d3b4f766-683a-427c-b922-9932fd60b4c8"
+  }
+}

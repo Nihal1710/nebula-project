@@ -1,0 +1,258 @@
+{
+  "source_file": "soc_violations_base2.json",
+  "violation_index": 112,
+  "edit_scope": {
+    "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+    "start_line": 1,
+    "end_line": 214,
+    "scope": "file"
+  },
+  "violation": {
+    "startpoint": "_124902_",
+    "endpoint": "_125646_",
+    "path_group": "uart_clk",
+    "path_type": "max",
+    "slack_ns": -0.02,
+    "violated": true,
+    "instances": [
+      {
+        "name": "_124902_",
+        "cell_type": "DFF_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.08,
+        "src_file": "rtl/vendor/uart/rtl/uart_rx.v",
+        "src_start_line": 170,
+        "src_end_line": 180,
+        "rtl_snippet": [
+          "always @(posedge clk) begin : p_cycle_counter",
+          "    if(!resetn) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(next_bit) begin",
+          "        cycle_counter <= {COUNT_REG_LEN{1'b0}};",
+          "    end else if(fsm_state == FSM_START || ",
+          "                fsm_state == FSM_RECV  || ",
+          "                fsm_state == FSM_STOP   ) begin",
+          "        cycle_counter <= cycle_counter + 1'b1;",
+          "    end",
+          "end"
+        ],
+        "truncated": false
+      },
+      {
+        "name": "_066098_",
+        "cell_type": "NOR4_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.18,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066100_",
+        "cell_type": "NAND4_X1",
+        "delay_ns": 0.05,
+        "arrival_ns": 0.23,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066105_",
+        "cell_type": "OAI22_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.31,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066107_",
+        "cell_type": "NOR2_X1",
+        "delay_ns": 0.01,
+        "arrival_ns": 0.32,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066108_",
+        "cell_type": "AOI211_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.4,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066115_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.13,
+        "arrival_ns": 0.53,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066117_",
+        "cell_type": "AND3_X1",
+        "delay_ns": 0.08,
+        "arrival_ns": 0.61,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066119_",
+        "cell_type": "NAND3_X1",
+        "delay_ns": 0.1,
+        "arrival_ns": 0.71,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066120_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.09,
+        "arrival_ns": 0.8,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_066125_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.86,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109696_",
+        "cell_type": "XOR2_X1",
+        "delay_ns": 0.06,
+        "arrival_ns": 0.92,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_109703_",
+        "cell_type": "NOR3_X1",
+        "delay_ns": 0.03,
+        "arrival_ns": 0.95,
+        "src_file": null,
+        "src_start_line": null,
+        "src_end_line": null,
+        "rtl_snippet": null,
+        "truncated": false
+      },
+      {
+        "name": "_125646_",
+        "cell_type": "DFFR_X1",
+        "delay_ns": 0.0,
+        "arrival_ns": 0.95,
+        "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+        "src_start_line": 52,
+        "src_end_line": 61,
+        "rtl_snippet": [
+          "     always @(posedge wclk or negedge wrst_n) begin",
+          "",
+          "        if (!wrst_n) begin",
+          "            awfull <= 1'b0;",
+          "            wfull  <= 1'b0;",
+          "        end else begin",
+          "            awfull <= awfull_val;",
+          "            wfull  <= wfull_val;",
+          "        end",
+          "    end"
+        ],
+        "truncated": false
+      }
+    ],
+    "fanout_outlier": null
+  },
+  "fix": {
+    "fix_type": "no_fix",
+    "target_module": "uart_rx",
+    "added_latency_cycles": 0,
+    "modified_rtl": "",
+    "rationale": "Startpoint _124902_ (DFF_X1, uart_rx.v:170) is the `bit_sample` register in the p_bit_sample process. Tracing its only fan-out in this module: it is read exactly once, inside p_recieved_data, as a synchronous RHS term (`recieved_data[PAYLOAD_BITS-1] <= bit_sample;`, guarded by fsm_state==FSM_RECV && next_bit) \u2014 i.e. it is captured directly into another register on the same clock edge, not used combinationally by any output-facing logic. uart_rx_valid, uart_rx_break and uart_rx_data (the only paths that leave this module) depend on fsm_state/next_bit/recieved_data, none of which are combinationally driven by bit_sample. So within uart_rx.v there is no combinational egress from this DFF at all, let alone one that plausibly produces 12 gate stages (NOR4\u2192NAND4\u2192OAI22\u2192NOR2\u2192AOI211\u2192AND3\u2192AND3\u2192NAND3\u2192XOR2\u2192XOR2\u2192XOR2\u2192NOR3) ending in a DFFR_X1 that synthesis attributes to rtl/vendor/async_fifo/rtl/wptr_full.v:52 \u2014 a completely different module/file. That endpoint file/line is exactly where a Gray-code write-pointer full-flag is normally computed (binary-increment + binary-to-Gray XOR chain + Gray-code compare via AND/NOR/XOR trees against the synchronized read pointer), which matches this gate sequence far better than anything in uart_rx.v. This is a direct instance of the stated visibility warning: 12 of 14 cells are unattributed, and the RTL we were given does not contain a path that could plausibly produce this delay chain.\nConsequently none of the three edit strategies apply *in this scope*: RETIME needs a movable register inside the combinational cloud \u2014 the only registers in scope are the two path endpoints (bit_sample and the far-away wptr_full flop), and moving either would require editing wptr_full.v, which is out of scope. PIPELINE would need to insert a new register somewhere along the actual combinational chain \u2014 that chain does not exist inside uart_rx.v (bit_sample's fanout here is already fully registered), so any register I could add in this file would not sit on this timing arc at all, and would add latency to unrelated functionality for no benefit. RESTRUCTURE would need to rewrite the reported combinational network to a shallower equivalent, but that network (NOR4/NAND4/OAI22/.../XOR2\u00d73/NOR3) is not present in this file's logic \u2014 nothing here corresponds to it, so there is no expression in uart_rx.v to restructure. Editing uart_rx.v cannot legally change a delay chain that lives in wptr_full.v.\nA correct fix requires seeing and editing the Gray-code increment/compare/full-flag logic in the async_fifo write-pointer module, where the register on this path's tail actually lives, so that either an existing pipeline register there can be retimed across the XOR/AND/NOR tree, or that tree can be restructured (e.g. balancing the Gray-to-binary/compare logic) or pipelined with a properly latency-matched read-side/full-flag update.",
+    "out_of_scope_fix": {
+      "src_file": "rtl/vendor/async_fifo/rtl/wptr_full.v",
+      "start_line": 1,
+      "end_line": 60,
+      "confidence": "medium",
+      "reason": "The endpoint flop (_125646_, DFFR_X1) is explicitly attributed to this file at line 52, and the preceding gate sequence (binary-increment logic followed by a 3-XOR2 + NOR3 compare tree) is the classic shape of Gray-code write-pointer increment/full-flag comparison logic that this file implements; the driving bit_sample register in uart_rx.v has no combinational egress in the shown RTL, so the dominant combinational delay almost certainly lives in this module instead."
+    }
+  },
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "new_registered_signals": [],
+    "register_delta": null,
+    "tier": null,
+    "refused": true
+  },
+  "meta": {
+    "backend": "agent_sdk",
+    "model": "claude-sonnet-5",
+    "num_turns": 2,
+    "cost_usd": 0.12367460000000001,
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 4288,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.004353,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 9971,
+        "cacheReadInputTokens": 2438,
+        "cacheCreationInputTokens": 4780,
+        "webSearchRequests": 0,
+        "costUSD": 0.11932160000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 8478,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "session_id": "5aa144c5-e5a3-4402-a672-f9b047b71230"
+  }
+}
