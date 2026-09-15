@@ -58,12 +58,34 @@ re-STA, and refuses to retry on an unreachable counterexample.
 equivalence checking still come from artefacts, because those need Docker and
 the CAD suite respectively.
 
+## Interactive demo
+
+```bash
+python3 demo.py          # then open http://localhost:8000
+```
+
+Python 3 and a browser. Nothing else — no Docker, no CAD suite, no network.
+
+Four tabs, one per proposal, each stepping through the loop with the recorded
+numbers and the actual RTL diff. The switchboard on the left turns each gate
+off, and the verdict changes: with Gate A off, the SPI fix is accepted even
+though the same screen shows it went from −0.03 to −0.08 ns.
+
+The decision logic is not duplicated. `demo.py` imports `decide()` from
+`run_loop.py` and refuses to start unless its gate-switching variant agrees
+with it on all four cases.
+
+Stage 2 has a button that re-runs `propose_fix.py` live against the same
+violation. That one needs `.venv` and a valid session.
+
 ---
 
 ## Layout
 
 ```
 run_loop.py            orchestrator; decision logic lives in decide()
+demo.py + demo/        interactive demo; imports decide() from run_loop.py
+modelcmp.py            repeat-run experiment: model choice vs run-to-run variance
 propose_fix.py         builds the prompt, calls the model, validates the patch
 escalate.py            widens edit scope, bounded to files on the violating path
 patch_schema.py        adds out_of_scope_fix to the patch schema (idempotent)
@@ -91,6 +113,30 @@ Re-synthesise before trusting any measurement against an on-disk netlist.
 
 ---
 
+## Prerequisites
+
+On the host, before anything else:
+
+```bash
+sudo apt install iverilog        # simulation; not bundled with Yosys
+docker --version                 # Docker Engine, not Desktop
+```
+
+Clone with `git clone`, not by downloading the ZIP. GitHub's ZIP extracts to
+`nebula-project-main`, and every path below assumes `nebula-project`.
+
+```bash
+git clone https://github.com/Nihal1710/nebula-project.git
+cd nebula-project
+```
+
+Nothing else needs installing for synthesis or STA. The Docker image already
+contains OpenROAD-flow-scripts at `/OpenROAD-flow-scripts`, including the
+Nangate45 liberty, so there is no separate repository to clone and nothing to
+mount beyond this one.
+
+---
+
 ## Reproducing the measurements
 
 ### Synthesis and STA — Docker
@@ -98,18 +144,36 @@ Re-synthesise before trusting any measurement against an on-disk netlist.
 ```bash
 sudo systemctl start docker
 docker run -it --rm --user $(id -u):$(id -g) \
-  -v ~/nebula-project:/workspace \
-  -v ~/OpenROAD-flow-scripts:/home/nihal/OpenROAD-flow-scripts:ro \
-  -w /workspace openroad/flow-ubuntu22.04-builder:aeae7d bash
-
-S=/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/sta   # not on PATH
-$S -version                                                # check this first
+  -v $(pwd):/workspace -w /workspace \
+  openroad/flow-ubuntu22.04-builder:aeae7d bash
 ```
 
-The liberty path is hardcoded in the `.ys` and `.tcl` scripts as
-`/home/nihal/OpenROAD-flow-scripts/...`. That resolves inside the container
-because of the mount above. Outside it, edit the three occurrences in
-`synth_soc_top.ys` and the one in each `sta_*.tcl`.
+`$(pwd)` rather than a fixed path, so it works from wherever you cloned.
+
+If Docker reports `openroad/flow-ubuntu22.04-builder:aeae7d: not found`, that
+pinned tag is no longer on Docker Hub. Use `:latest` instead and note it — a
+different image means a different Yosys and OpenSTA, so figures may shift
+slightly from those in the report.
+
+Inside the container:
+
+```bash
+S=/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/sta   # not on PATH
+$S -version                                               # check this first
+ls /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/   # liberty must be here
+```
+
+Every `.tcl` script resolves the liberty through `$ORFS`, defaulting to
+`/OpenROAD-flow-scripts`. If your image keeps it elsewhere, set `ORFS` once and
+everything follows:
+
+```bash
+export ORFS=/path/to/OpenROAD-flow-scripts
+```
+
+The `.ys` scripts hardcode the same path, because Yosys does not expand
+environment variables in script files. If you had to set `ORFS`, edit the three
+`-liberty` lines in `synth_soc_top.ys` and `synth_fir.ys` to match.
 
 ```bash
 yosys synth_soc_top.ys
@@ -133,40 +197,39 @@ is not optional.
 ### Power
 
 ```bash
-NETLIST=netlist/soc_top_netlist_FIRBASE.v  STA_OUT=power_FIRBASE.rpt  $S -no_splash -exit sta_power.tcl
-NETLIST=netlist/soc_top_netlist_FINAL_v2.v STA_OUT=power_FINAL.rpt    $S -no_splash -exit sta_power.tcl
+NETLIST=netlist/soc_top_netlist_FIRBASE_clean.v SDC=constraints_soc_FIRBASE.sdc \
+  $S -no_splash -exit sta_power_noact.tcl > reports/power_FIRBASE.rpt 2>&1
+NETLIST=netlist/soc_top_netlist_FINAL_v2.v SDC=constraints_soc_FINAL_v2.sdc \
+  $S -no_splash -exit sta_power_noact.tcl > reports/power_FINAL.rpt 2>&1
 ```
 
 `sta_power_noact.tcl` deliberately runs **no** `set_power_activity`. Both
 annotation strategies tried produced non-physical output (4e+15 W, NaN, inf);
-removing the annotation entirely gives a finite, consistent report. The files
+removing the annotation gives a finite, consistent report. The files
 `reports/power_*_v2.rpt` and the `-input` pair are kept as evidence of that
 failure, not as results.
 
 The SDC must match the netlist. Generated clocks are pinned to synthesis-
 specific cell names, and Yosys renumbers on every run, so measuring an archived
 netlist against the current SDC silently builds a fictional clock network.
-Regenerate first:
-
-```bash
-NL=<netlist> ./gen_clocks.sh > fresh_clocks_<tag>.txt
-python3 fix_sdc.py constraints_soc_<tag>.sdc fresh_clocks_<tag>.txt
-```
 
 Module-scope power for the FIR, which needs no generated clocks at all:
 
 ```bash
-NETLIST=netlist/fir_gl_BASE.v  $S -no_splash -exit sta_power_fir.tcl
-NETLIST=netlist/fir_gl_FINAL.v $S -no_splash -exit sta_power_fir.tcl
+NETLIST=netlist/fir_gl_BASE.v  $S -no_splash -exit sta_power_fir.tcl > reports/power_fir_BASE.rpt 2>&1
+NETLIST=netlist/fir_gl_FINAL.v $S -no_splash -exit sta_power_fir.tcl > reports/power_fir_FINAL.rpt 2>&1
 ```
 
 ### Simulation
+
+On the host, not in the container:
 
 ```bash
 bash run_soc_top.sh     # expect 4 PASS and "ALL 4 PERIPHERALS REACHED"
 ```
 
-Needs `iverilog` with `-g2012`. This is the check formal verification
+Requires `iverilog` with `-g2012`. If you see `iverilog: command not found`,
+install it — see prerequisites. This is the check formal verification
 structurally cannot do: the fixes running inside the assembled SoC, including
 the FIR pipeline's extra cycle not breaking `fir_wrapper`'s handshake.
 
@@ -179,8 +242,6 @@ cd formal && cat README.md
 
 `eqy: command not found` means the `source` was skipped. Full per-case
 instructions and expected output are in `formal/README.md`.
-
----
 
 ## Guards
 
@@ -221,8 +282,10 @@ Track C, the EQY and SBY cases in `formal/` and their logs.
 ## Environment
 
 Ubuntu 22.04.5. Yosys 0.67, OpenSTA 3.1.0 and OpenROAD 26Q3 via
-`openroad/flow-ubuntu22.04-builder:aeae7d`. EQY and SBY from OSS CAD Suite.
-Icarus Verilog for simulation. Track B runs outside Docker:
+`openroad/flow-ubuntu22.04-builder:aeae7d` — the image ships
+OpenROAD-flow-scripts at `/OpenROAD-flow-scripts`, so no host copy is needed.
+EQY and SBY from OSS CAD Suite. Icarus Verilog on the host for simulation.
+Track B runs outside Docker:
 
 ```bash
 source .venv/bin/activate

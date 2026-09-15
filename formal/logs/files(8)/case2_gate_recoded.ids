@@ -1,0 +1,25 @@
+fir_filter . A:src="fir_gate.v:1.1-45.10" A:top=1 A:dynports=1
+fir_filter sample_out w=15:0 A:src="fir_gate.v:4.31-4.41" P=O
+fir_filter sample_in w=15:0 A:src="fir_gate.v:3.31-3.40" P=I
+fir_filter rst w=0:0 A:src="fir_gate.v:2.22-2.25" P=I
+fir_filter psum_lo w=15:0
+fir_filter psum_hi w=15:0
+fir_filter imm w=40:0 A:src="fir_gate.v:8.19-8.22"
+fir_filter en w=0:0 A:src="fir_gate.v:2.33-2.35" P=I
+fir_filter clk w=0:0 A:src="fir_gate.v:2.11-2.14" P=I
+fir_filter c[7] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[6] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[5] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[4] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[3] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[2] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[1] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter c[0] w=15:0 A:src="fir_gate.v:6.24-6.25"
+fir_filter Q[7] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[6] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[5] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[4] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[3] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[2] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[1] w=15:0 A:src="fir_gate.v:7.24-7.25"
+fir_filter Q[0] w=15:0 A:src="fir_gate.v:7.24-7.25"
